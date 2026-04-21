@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /pago-exitoso.html
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://kondorflow.com/sitemap.xml
+
+# Kondorflow — HG Next Gen Solutions
+# Lima, Perú — LATAM
+# info@kondorflow.com

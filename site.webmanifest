@@ -1,0 +1,14 @@
+{
+  "name": "Kondorflow — Landing Pages & AI para Empresas LATAM",
+  "short_name": "Kondorflow",
+  "description": "Agencia digital en Lima, Perú: Landing Pages con SEO, AI Agents, Chatbots RAG y Analítica Web para empresas en LATAM.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f14",
+  "theme_color": "#0f0f14",
+  "lang": "es-PE",
+  "icons": [
+    { "src": "/kondorlogo1.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/kondorlogo1.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
