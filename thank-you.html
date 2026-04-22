@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Gracias por escribirnos! — Kondorflow</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f0f14">
+<link rel="icon" type="image/png" href="kondorlogo1.webp">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J55EJNXZVR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J55EJNXZVR');
+  gtag('event', 'form_thank_you', { event_category: 'contact', event_label: 'thank_you_page' });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  background:#0f0f14;
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  position:relative;
+  overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── Background ── */
+.bg-mesh{
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 700px 600px at 15% 40%, rgba(197,95,255,.13) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 400px at 85% 65%, rgba(0,212,255,.10) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 50% 90%, rgba(124,92,252,.08) 0%, transparent 70%);
+}
+.bg-grid{
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse at center,black 10%,transparent 72%);
+}
+
+/* ── Floating particles ── */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.particle{
+  position:absolute;
+  border-radius:50%;
+  animation:drift linear infinite;
+  opacity:0;
+}
+@keyframes drift{
+  0%{transform:translateY(100vh) rotate(0deg);opacity:0}
+  10%{opacity:1}
+  90%{opacity:.6}
+  100%{transform:translateY(-20vh) rotate(360deg);opacity:0}
+}
+
+/* ── Card ── */
+.card{
+  position:relative;z-index:1;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:28px;
+  padding:60px 52px;
+  max-width:560px;
+  width:100%;
+  text-align:center;
+  animation:cardIn .8s cubic-bezier(.34,1.46,.64,1) both;
+  overflow:hidden;
+}
+@keyframes cardIn{
+  from{opacity:0;transform:translateY(50px) scale(.94)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.card::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:70%;height:1px;
+  background:linear-gradient(90deg,transparent,#c55fff,#00d4ff,transparent);
+}
+/* inner glow */
+.card::after{
+  content:'';position:absolute;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(197,95,255,.07) 0%,transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;
+  animation:pulse-soft 5s ease-in-out infinite;
+}
+@keyframes pulse-soft{
+  0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6}
+  50%{transform:translate(-50%,-50%) scale(1.3);opacity:1}
+}
+
+/* ── Logo ── */
+.logo-wrap{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-bottom:44px;text-decoration:none;position:relative;z-index:1;
+}
+.logo-img{
+  width:40px;height:40px;object-fit:cover;border-radius:13px;
+  filter:drop-shadow(0 0 12px rgba(197,95,255,.65));
+}
+.logo-txt{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:1.25rem;font-weight:700;letter-spacing:.08em;
+  background:linear-gradient(135deg,#c55fff,#7c5cfc,#00d4ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* ── Condor emoji big ── */
+.condor-wrap{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  margin-bottom:28px;z-index:1;
+}
+.condor-img{
+  width:120px;height:120px;object-fit:cover;border-radius:28px;
+  filter:drop-shadow(0 0 28px rgba(197,95,255,.6)) drop-shadow(0 0 60px rgba(0,212,255,.25));
+  animation:bounce 2.5s ease-in-out infinite;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-12px) rotate(1deg)}
+}
+.condor-ring{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(197,95,255,.2);
+  animation:rot 12s linear infinite;
+  width:160px;height:160px;
+}
+.condor-ring-2{
+  width:130px;height:130px;
+  border-color:rgba(0,212,255,.15);
+  animation:rot 9s linear infinite reverse;
+}
+@keyframes rot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.ring-dot{
+  position:absolute;width:6px;height:6px;border-radius:50%;
+  top:-3px;left:50%;transform:translateX(-50%);
+}
+.condor-ring .ring-dot{background:#00d4ff;box-shadow:0 0 8px #00d4ff}
+.condor-ring-2 .ring-dot{background:#c55fff;box-shadow:0 0 8px #c55fff}
+
+/* ── Badge ── */
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.22);
+  border-radius:50px;padding:5px 15px;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:#00d4ff;margin-bottom:18px;
+  position:relative;z-index:1;
+  animation:fadeUp .5s ease .3s both;
+}
+.badge-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:#00d4ff;animation:blink 2s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Title ── */
+.title{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:clamp(2rem,6vw,2.8rem);
+  font-weight:700;line-height:1.1;
+  margin-bottom:14px;
+  position:relative;z-index:1;
+  animation:fadeUp .5s ease .4s both;
+}
+.holo{
+  background:linear-gradient(135deg,#c55fff,#7c5cfc,#00d4ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* ── Subtitle ── */
+.subtitle{
+  font-size:.97rem;color:rgba(255,255,255,.58);
+  font-weight:300;line-height:1.75;
+  margin-bottom:36px;
+  position:relative;z-index:1;
+  animation:fadeUp .5s ease .5s both;
+}
+.subtitle strong{color:rgba(255,255,255,.85);font-weight:500}
+
+/* ── Steps ── */
+.steps{
+  display:flex;flex-direction:column;gap:12px;
+  margin-bottom:36px;text-align:left;
+  position:relative;z-index:1;
+  animation:fadeUp .5s ease .55s both;
+}
+.step-item{
+  display:flex;align-items:flex-start;gap:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:16px 18px;
+  transition:border-color .3s,background .3s;
+}
+.step-item:hover{
+  border-color:rgba(197,95,255,.22);
+  background:rgba(197,95,255,.05);
+}
+.step-ico{
+  width:36px;height:36px;flex-shrink:0;border-radius:9px;
+  background:linear-gradient(135deg,#c55fff,#7c5cfc);
+  display:flex;align-items:center;justify-content:center;font-size:.95rem;
+}
+.step-txt h4{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:.95rem;font-weight:600;color:#fff;margin-bottom:3px;
+}
+.step-txt p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5;font-weight:300}
+
+/* ── Divider ── */
+.divider{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:24px;
+  position:relative;z-index:1;
+  animation:fadeUp .5s ease .6s both;
+}
+.dline{flex:1;height:1px;background:rgba(255,255,255,.08)}
+.dtxt{font-size:.68rem;color:rgba(255,255,255,.28);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+
+/* ── Buttons ── */
+.btn-group{
+  display:flex;flex-direction:column;gap:11px;
+  position:relative;z-index:1;
+  animation:fadeUp .5s ease .65s both;
+}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px 28px;border-radius:50px;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  font-size:.88rem;font-weight:500;text-decoration:none;
+  border:none;cursor:pointer;transition:all .3s ease;letter-spacing:.01em;
+}
+.btn-wa{
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff;box-shadow:0 4px 18px rgba(37,211,102,.3);
+}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(37,211,102,.48)}
+.btn-primary{
+  background:linear-gradient(135deg,#c55fff,#7c5cfc);
+  color:#fff;box-shadow:0 4px 18px rgba(124,92,252,.35);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,92,252,.52)}
+.btn-ghost{
+  background:transparent;color:rgba(255,255,255,.55);
+  border:1.5px solid rgba(255,255,255,.18);font-size:.84rem;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.85);transform:translateY(-1px)}
+
+/* ── Footer note ── */
+.footer-note{
+  margin-top:28px;font-size:.73rem;
+  color:rgba(255,255,255,.22);line-height:1.6;text-align:center;
+  position:relative;z-index:1;
+  animation:fadeUp .5s ease .7s both;
+}
+.footer-note a{color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s}
+.footer-note a:hover{color:rgba(255,255,255,.65)}
+
+/* ── Countdown ── */
+.countdown-wrap{
+  margin-top:12px;font-size:.76rem;color:rgba(255,255,255,.32);
+  position:relative;z-index:1;
+}
+#countdown{color:#00d4ff;font-weight:600}
+
+/* ── Responsive ── */
+@media(max-width:580px){.card{padding:44px 28px}}
+@media(max-width:380px){.card{padding:32px 20px;border-radius:20px}}
+</style>
+</head>
+<body>
+
+<div class="bg-mesh"    aria-hidden="true"></div>
+<div class="bg-grid"    aria-hidden="true"></div>
+<div class="particles"  id="particles" aria-hidden="true"></div>
+
+<div class="card" role="main">
+
+  <!-- Logo -->
+  <a href="https://kondorflow.com" class="logo-wrap" aria-label="Volver a Kondorflow">
+    <img class="logo-img" src="kondorlogo1.webp" alt="Kondorflow logo">
+    <span class="logo-txt">KONDORFLOW</span>
+  </a>
+
+  <!-- Condor animado -->
+  <div class="condor-wrap" aria-hidden="true">
+    <div class="condor-ring"><div class="ring-dot"></div></div>
+    <div class="condor-ring condor-ring-2"><div class="ring-dot"></div></div>
+    <img class="condor-img" src="kondorlogo1.webp" alt="Kondorflow cóndor">
+  </div>
+
+  <!-- Badge -->
+  <div class="badge">
+    <span class="badge-dot"></span>
+    Mensaje recibido
+  </div>
+
+  <!-- Título -->
+  <h1 class="title">
+    ¡Gracias por<br>
+    <span class="holo">escribirnos!</span> 🎉
+  </h1>
+
+  <!-- Subtítulo -->
+  <p class="subtitle">
+    Tu mensaje llegó perfectamente.<br>
+    Te respondemos en <strong>menos de 24 horas hábiles</strong> — prometido.
+  </p>
+
+  <!-- Pasos -->
+  <div class="steps" role="list">
+    <div class="step-item" role="listitem">
+      <div class="step-ico">📩</div>
+      <div class="step-txt">
+        <h4>Revisamos tu mensaje</h4>
+        <p>Nuestro equipo leerá tu consulta y preparará la mejor propuesta para ti.</p>
+      </div>
+    </div>
+    <div class="step-item" role="listitem">
+      <div class="step-ico">📞</div>
+      <div class="step-txt">
+        <h4>Te contactamos pronto</h4>
+        <p>Te escribiremos por WhatsApp o email para coordinar una reunión.</p>
+      </div>
+    </div>
+    <div class="step-item" role="listitem">
+      <div class="step-ico">🚀</div>
+      <div class="step-txt">
+        <h4>¡Empezamos a trabajar juntos!</h4>
+        <p>Recuerda: pagas solo cuando apruebas y recibes tu producto final.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="divider">
+    <div class="dline"></div>
+    <span class="dtxt">¿Necesitas respuesta urgente?</span>
+    <div class="dline"></div>
+  </div>
+
+  <!-- Botones -->
+  <div class="btn-group">
+    <a href="https://wa.me/51943489132?text=Hola%20Kondorflow%2C%20acabo%20de%20enviar%20un%20formulario%20y%20necesito%20respuesta%20pronto"
+       class="btn btn-wa"
+       onclick="gtag('event','whatsapp_click',{event_category:'thank_you',event_label:'urgent_wa'})">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Escribir ahora por WhatsApp
+    </a>
+    <a href="https://kondorflow.com/#servicios"
+       class="btn btn-primary"
+       onclick="gtag('event','back_services',{event_category:'thank_you',event_label:'explore_services'})">
+      ✨ Explorar nuestros servicios
+    </a>
+    <a href="https://kondorflow.com"
+       class="btn btn-ghost"
+       onclick="gtag('event','back_home',{event_category:'thank_you',event_label:'home'})">
+      ← Volver al inicio
+    </a>
+  </div>
+
+  <!-- Countdown -->
+  <div class="countdown-wrap" aria-live="polite">
+    Volviendo al inicio en <span id="countdown">10</span>s
+  </div>
+
+</div>
+
+<!-- Footer note -->
+<p class="footer-note">
+  Kondorflow · HG Next Gen Solutions · Lima, Perú<br>
+  <a href="mailto:info@kondorflow.com">info@kondorflow.com</a>
+  &nbsp;·&nbsp;
+  <a href="https://wa.me/51943489132">+51 943 489 132</a>
+</p>
+
+<script>
+// ── Floating particles ────────────────────────────────
+(function(){
+  const wrap = document.getElementById('particles');
+  const colors = ['#c55fff','#7c5cfc','#00d4ff','rgba(197,95,255,.6)','rgba(0,212,255,.5)'];
+  for(let i = 0; i < 22; i++){
+    const el = document.createElement('div');
+    el.className = 'particle';
+    const sz = Math.random() * 5 + 3;
+    el.style.cssText = `
+      left:${Math.random()*100}%;
+      width:${sz}px;height:${sz}px;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      animation-duration:${8+Math.random()*12}s;
+      animation-delay:${Math.random()*8}s;
+    `;
+    wrap.appendChild(el);
+  }
+})();
+
+// ── Auto-redirect countdown ───────────────────────────
+let secs = 10;
+const cd = document.getElementById('countdown');
+const timer = setInterval(() => {
+  secs--;
+  if(cd) cd.textContent = secs;
+  if(secs <= 0){
+    clearInterval(timer);
+    window.location.href = 'https://kondorflow.com';
+  }
+}, 1000);
+
+// Cancel countdown if user interacts
+document.querySelector('.card').addEventListener('click', () => {
+  clearInterval(timer);
+  const wrap = document.querySelector('.countdown-wrap');
+  if(wrap) wrap.style.display = 'none';
+}, {once: true});
+</script>
+</body>
+</html>

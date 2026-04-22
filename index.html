@@ -1023,9 +1023,9 @@ async function handleForm(e) {
     const json = await res.json();
 
     if (json.success) {
-      showMsg('✅ ¡Mensaje enviado! Te responderemos en menos de 24 horas hábiles.', '#38a169');
       gtag('event', 'form_submitted', { event_category: 'contact', event_label: f.servicio.value || 'general' });
       f.reset();
+      window.location.href = '/thank-you';
     } else {
       showMsg('❌ Hubo un error al enviar. Por favor escríbenos directo a info@kondorflow.com', '#e53e3e');
     }
