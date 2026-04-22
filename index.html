@@ -32,9 +32,9 @@
 <meta name="twitter:image" content="https://kondorflow.com/og-image.jpg">
 
 <!-- Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="kondorlogo1.png">
-<link rel="icon" type="image/png" sizes="16x16" href="kondorlogo1.png">
-<link rel="apple-touch-icon" href="kondorlogo1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="kondorlogo1.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="kondorlogo1.webp">
+<link rel="apple-touch-icon" href="kondorlogo1.webp">
 <link rel="manifest" href="site.webmanifest">
 
 <!-- Fonts -->
@@ -60,7 +60,7 @@
   "name": "Kondorflow",
   "legalName": "HG Next Gen Solutions",
   "url": "https://kondorflow.com",
-  "logo": "https://kondorflow.com/kondorlogo1.png",
+  "logo": "https://kondorflow.com/kondorlogo1.webp",
   "description": "Agencia de tecnología y marketing digital especializada en landing pages, automatización con AI Agents y analítica web para empresas en Lima, Perú y LATAM.",
   "telephone": "+51943489132",
   "email": "info@kondorflow.com",
@@ -426,7 +426,7 @@ footer{background:var(--ink-soft);border-top:1px solid rgba(255,255,255,.06);pad
 <nav id="nav">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo" aria-label="Kondorflow inicio">
-      <img class="nav-logo-img" src="kondorlogo1.png" alt="Kondorflow ícono">
+      <img class="nav-logo-img" src="kondorlogo1.webp" alt="Kondorflow ícono">
       <span class="nav-logo-text holo">KONDORFLOW</span>
     </a>
     <ul class="nav-links">
@@ -504,7 +504,7 @@ footer{background:var(--ink-soft);border-top:1px solid rgba(255,255,255,.06);pad
       <div class="hero-img-wrap">
         <div class="h-ring h-ring-out"><div class="ring-dot"></div></div>
         <div class="h-ring h-ring-in"><div class="ring-dot"></div></div>
-        <img class="hero-logo-img" src="kondorlogo1.png" alt="Kondorflow logo cóndor">
+        <img class="hero-logo-img" src="kondorlogo1.webp" alt="Kondorflow logo cóndor">
       </div>
     </div>
   </div>
@@ -851,8 +851,14 @@ footer{background:var(--ink-soft);border-top:1px solid rgba(255,255,255,.06);pad
       <div class="c-form-wrap reveal d2">
         <h3 class="form-t">Cuéntanos sobre tu negocio</h3>
         <form id="cForm" onsubmit="handleForm(event)" novalidate>
+          <!-- Web3Forms -->
+          <input type="hidden" name="access_key" value="b8d297f2-d1cd-40d0-821a-d8b8e64c2f0f">
+          <input type="hidden" name="subject" value="Nueva consulta desde kondorflow.com">
+          <input type="hidden" name="from_name" value="Kondorflow Web">
+          <input type="hidden" name="redirect" value="false">
+          <input type="checkbox" name="botcheck" style="display:none">
           <div class="f-row">
-            <div class="fg"><label>Nombre *</label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
+            <div class="fg"><label>Nombre *</label><input type="text" name="name" placeholder="Tu nombre" required></div>
             <div class="fg"><label>Empresa</label><input type="text" name="empresa" placeholder="Nombre de tu empresa"></div>
           </div>
           <div class="f-row">
@@ -863,21 +869,20 @@ footer{background:var(--ink-soft);border-top:1px solid rgba(255,255,255,.06);pad
             <label>¿Qué servicio te interesa?</label>
             <select name="servicio">
               <option value="">Selecciona una opción</option>
-              <option value="landing">Landing Page + Correo Corporativo</option>
-              <option value="ai">AI Agents & Chatbots RAG</option>
-              <option value="analitica">Analítica Web & Ciencia de Datos</option>
-              <option value="redes">Contenido & WhatsApp Business</option>
-              <option value="automatizacion">Automatización de procesos</option>
-              <option value="pack360">Paquete Completo 360°</option>
-              <option value="otro">Otro / Consultar</option>
+              <option value="Landing Page + Correo Corporativo">Landing Page + Correo Corporativo</option>
+              <option value="AI Agents & Chatbots RAG">AI Agents &amp; Chatbots RAG</option>
+              <option value="Analítica Web & Ciencia de Datos">Analítica Web &amp; Ciencia de Datos</option>
+              <option value="Contenido & WhatsApp Business">Contenido &amp; WhatsApp Business</option>
+              <option value="Automatización de procesos">Automatización de procesos</option>
+              <option value="Paquete Completo 360">Paquete Completo 360°</option>
+              <option value="Otro / Consultar">Otro / Consultar</option>
             </select>
           </div>
           <div class="fg">
             <label>Mensaje *</label>
-            <textarea name="mensaje" placeholder="¿Qué quieres lograr? ¿Cuál es tu mayor desafío actual?" required></textarea>
+            <textarea name="message" placeholder="¿Qué quieres lograr? ¿Cuál es tu mayor desafío actual?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.92rem;padding:13px;"
-                  onclick="gtag('event','form_submit',{event_category:'contact',event_label:'form'})">
+          <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.92rem;padding:13px;">
             Enviar mensaje →
           </button>
           <div id="fMsg" style="margin-top:12px;text-align:center;font-size:.84rem;display:none;"></div>
@@ -893,7 +898,7 @@ footer{background:var(--ink-soft);border-top:1px solid rgba(255,255,255,.06);pad
     <div class="footer-grid">
       <div class="fb">
         <a href="#hero" class="footer-logo">
-          <img class="fl-img" src="kondorlogo1.png" alt="Kondorflow logo">
+          <img class="fl-img" src="kondorlogo1.webp" alt="Kondorflow logo">
           <span class="fl-txt">KONDORFLOW</span>
         </a>
         <p>Simplify · Automate · Flow.<br>Tecnología con enfoque de negocio para empresas en Lima, Perú y LATAM.</p>
@@ -983,25 +988,48 @@ function toggleFAQ(btn) {
   if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
 }
 
-// Contact form → mailto
-function handleForm(e) {
+// Contact form → Web3Forms
+async function handleForm(e) {
   e.preventDefault();
   const f = e.target;
-  const n = f.nombre.value.trim(), em = f.email.value.trim(), m = f.mensaje.value.trim();
-  const msg = document.getElementById('fMsg');
+  const n = f.name.value.trim();
+  const em = f.email.value.trim();
+  const m = f.message.value.trim();
+
   if (!n || !em || !m) { showMsg('Por favor completa los campos requeridos (*)', '#e53e3e'); return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { showMsg('Por favor ingresa un email válido.', '#e53e3e'); return; }
-  const sub = encodeURIComponent('Solicitud · ' + (f.servicio.value || 'General'));
-  const body = encodeURIComponent(`Nombre: ${n}\nEmpresa: ${f.empresa.value}\nEmail: ${em}\nTel: ${f.telefono.value}\nServicio: ${f.servicio.value}\n\nMensaje:\n${m}`);
-  window.location.href = `mailto:info@kondorflow.com?subject=${sub}&body=${body}`;
-  gtag('event','form_submitted',{event_category:'contact',event_label:f.servicio.value||'general'});
-  showMsg('✅ ¡Gracias! Tu cliente de correo se abrirá para enviar el mensaje.','#38a169');
-  f.reset();
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  const data = new FormData(f);
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    });
+    const json = await res.json();
+
+    if (json.success) {
+      showMsg('✅ ¡Mensaje enviado! Te responderemos en menos de 24 horas hábiles.', '#38a169');
+      gtag('event', 'form_submitted', { event_category: 'contact', event_label: f.servicio.value || 'general' });
+      f.reset();
+    } else {
+      showMsg('❌ Hubo un error al enviar. Por favor escríbenos directo a info@kondorflow.com', '#e53e3e');
+    }
+  } catch (err) {
+    showMsg('❌ Sin conexión. Por favor escríbenos a info@kondorflow.com', '#e53e3e');
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Enviar mensaje →';
 }
 function showMsg(t, c) {
   const el = document.getElementById('fMsg');
   el.textContent = t; el.style.color = c; el.style.display = 'block';
-  setTimeout(() => el.style.display = 'none', 7000);
+  setTimeout(() => el.style.display = 'none', 8000);
 }
 
 // Smooth anchors
