@@ -32,9 +32,10 @@
 <meta name="twitter:image" content="https://kondorflow.com/og-image.jpg">
 
 <!-- Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="kondorlogo1.webp">
-<link rel="icon" type="image/png" sizes="16x16" href="kondorlogo1.webp">
-<link rel="apple-touch-icon" href="kondorlogo1.webp">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 
 <!-- Fonts -->
@@ -121,7 +122,7 @@
   --tr:  0.3s cubic-bezier(0.4,0,0.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden;scroll-padding-top:72px}
 body{background:var(--white);color:var(--text-d);font-family:var(--body);font-size:16px;line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 img{max-width:100%;height:auto}
 
@@ -133,14 +134,14 @@ img{max-width:100%;height:auto}
 .label{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
 
 /* reveal */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
 /* =====================================================
    BUTTONS
 ===================================================== */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;font-family:var(--body);font-size:.88rem;font-weight:500;letter-spacing:.02em;text-decoration:none;border:none;cursor:pointer;transition:var(--tr)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;font-family:var(--body);font-size:.88rem;font-weight:500;letter-spacing:.02em;text-decoration:none;border:none;cursor:pointer;transition:var(--tr);min-height:44px}
 .btn-primary{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;box-shadow:0 4px 20px rgba(124,92,252,.35)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,92,252,.5)}
 .btn-secondary{background:transparent;color:var(--text-d);border:1.5px solid var(--border-l)}
@@ -163,12 +164,12 @@ nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit
 .nav-links a{color:var(--muted-d);text-decoration:none;font-size:.84rem;font-weight:400;transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
 .nav-cta{display:flex;gap:10px;align-items:center}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:10px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
 .hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:var(--tr)}
 .mob-menu{display:none;position:fixed;inset:0;background:rgba(255,255,255,.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:26px}
 .mob-menu.open{display:flex}
 .mob-menu a{color:var(--ink);text-decoration:none;font-family:var(--display);font-size:1.5rem;font-weight:600}
-.mob-close{position:absolute;top:20px;right:22px;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--ink)}
+.mob-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--ink);min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
 
 /* =====================================================
    SECTION SHELL
@@ -185,14 +186,14 @@ nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit
 .hero-mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 700px 600px at 0% 50%,rgba(197,95,255,.11) 0%,transparent 70%),radial-gradient(ellipse 500px 400px at 100% 20%,rgba(0,212,255,.09) 0%,transparent 70%)}
 .hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse at center,black 20%,transparent 75%)}
 .hero-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(197,95,255,.1);border:1px solid rgba(197,95,255,.25);border-radius:50px;padding:5px 14px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:22px}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(197,95,255,.1);border:1px solid rgba(197,95,255,.25);border-radius:50px;padding:5px 14px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:22px;white-space:nowrap}
 .hero-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 .hero-h1{font-family:var(--display);font-size:clamp(2.6rem,6vw,5.4rem);font-weight:600;line-height:1.05;color:var(--text-l);margin-bottom:18px}
 .hero-sub{font-size:1rem;color:var(--muted-l);font-weight:300;line-height:1.75;max-width:460px;margin-bottom:34px}
 .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:44px}
 .hero-rule{width:40px;height:1px;background:rgba(255,255,255,.14);margin-bottom:26px}
-.hero-stats{display:flex;gap:32px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
 .stat-n{font-family:var(--display);font-size:2.1rem;font-weight:700;line-height:1}
 .stat-n.holo{background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .stat-l{font-size:.76rem;color:var(--muted-l);margin-top:4px;font-weight:300}
@@ -216,7 +217,7 @@ nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit
 #trust{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 0;overflow:hidden}
 .trust-track{display:flex;gap:68px;animation:marquee 28s linear infinite;width:max-content}
 .trust-item{display:flex;align-items:center;gap:9px;white-space:nowrap;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500}
-.ti{background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ti{color:var(--purple);filter:drop-shadow(0 0 4px rgba(197,95,255,.5))}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* =====================================================
@@ -228,9 +229,9 @@ nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit
 .svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
 .svc-card:hover{border-color:rgba(124,92,252,.28);box-shadow:0 12px 40px rgba(124,92,252,.1);transform:translateY(-4px)}
 .svc-card:hover::after{transform:scaleX(1)}
-.svc-card.hl{background:linear-gradient(160deg,#1a1030,#0f0f1e);border:1px solid transparent;background-clip:padding-box;position:relative}
-.svc-card.hl::after{content:'';position:absolute;inset:-1px;border-radius:calc(var(--r) + 1px);background:linear-gradient(135deg,var(--purple),var(--blue),var(--cyan));z-index:-1;opacity:.7}
-.svc-card.hl:hover{border-color:rgba(197,95,255,.3)}
+.svc-card.hl{background:linear-gradient(160deg,#1a1030,#0f0f1e);border:1.5px solid rgba(197,95,255,.5);position:relative;overflow:visible;box-shadow:0 0 0 1px rgba(0,212,255,.2),0 16px 48px rgba(124,92,252,.22)}
+.svc-card.hl::after{display:none}
+.svc-card.hl:hover{border-color:var(--purple);box-shadow:0 0 0 1px var(--cyan),0 20px 56px rgba(124,92,252,.35)}
 .svc-num{font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;font-weight:600}
 .svc-card.hl .svc-num{color:var(--cyan)}
 .svc-icon{font-size:1.7rem;margin-bottom:14px}
@@ -279,12 +280,12 @@ nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit
 ===================================================== */
 #clientes{padding:var(--pad);background:var(--white)}
 .cli-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.cli-card{background:var(--off-white);border-radius:var(--r);padding:36px 24px;border:1.5px solid var(--border-l);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:var(--tr);min-height:150px}
+.cli-card{background:var(--off-white);border-radius:var(--r);padding:32px 20px;border:1.5px solid var(--border-l);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:var(--tr);min-height:140px}
 .cli-card:hover{border-color:rgba(124,92,252,.2);box-shadow:0 8px 24px rgba(0,0,0,.06)}
 .cli-logo-wrap{height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
 .cli-logo{max-height:54px;max-width:120px;object-fit:contain;filter:grayscale(25%);transition:filter .3s}
 .cli-card:hover .cli-logo{filter:grayscale(0%)}
-.cli-fallback{font-size:2rem;display:none}
+.cli-fallback{font-size:2rem;display:none;margin-bottom:8px}
 .cli-name{font-family:var(--display);font-size:1rem;font-weight:600;color:var(--ink);letter-spacing:.04em}
 .cli-type{font-size:.73rem;color:var(--muted-d);margin-top:3px}
 
@@ -310,7 +311,7 @@ nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit
 .faq-wrap{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:9px}
 .faq-item{background:var(--white);border-radius:var(--r);border:1.5px solid var(--border-l);overflow:hidden;transition:border-color .25s}
 .faq-item.open{border-color:rgba(124,92,252,.28)}
-.faq-btn{width:100%;background:none;border:none;color:var(--ink);font-family:var(--body);font-size:.93rem;font-weight:500;padding:20px 24px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-btn{width:100%;background:none;border:none;color:var(--ink);font-family:var(--body);font-size:.93rem;font-weight:500;padding:20px 24px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:44px}
 .faq-btn:hover{color:var(--blue)}
 .faq-chev{width:24px;height:24px;flex-shrink:0;border-radius:50%;border:1.5px solid var(--border-l);display:flex;align-items:center;justify-content:center;font-size:.62rem;transition:transform .3s,background .3s}
 .faq-item.open .faq-chev{transform:rotate(180deg);background:linear-gradient(135deg,var(--purple),var(--blue));border-color:transparent;color:#fff}
@@ -342,7 +343,7 @@ nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit
 .c-text h4{font-size:.75rem;color:var(--muted-d);margin-bottom:2px;font-weight:500;text-transform:uppercase;letter-spacing:.05em}
 .c-text a,.c-text p{color:var(--ink);text-decoration:none;font-size:.9rem;transition:color .2s}
 .c-text a:hover{color:var(--blue)}
-.c-form-wrap{background:var(--off-white);border:1.5px solid var(--border-l);border-radius:var(--rl);padding:36px}
+.c-form-wrap{background:var(--off-white);border:1.5px solid var(--border-l);border-radius:var(--rl);padding:36px 32px}
 .form-t{font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:24px}
 .fg{margin-bottom:16px}
 .fg label{display:block;font-size:.76rem;font-weight:500;color:var(--muted-d);margin-bottom:6px}
@@ -422,7 +423,49 @@ footer{background:var(--ink-soft);border-top:1px solid rgba(255,255,255,.06);pad
   .cli-grid{grid-template-columns:1fr 1fr}
   .hero-actions,.cta-acts{flex-direction:column;align-items:flex-start}
   .cta-acts{align-items:center}
+  .cta-acts .btn{width:100%;justify-content:center;padding:14px 20px}
+  .hero-actions .btn{width:100%;justify-content:center}
 }
+
+
+/* ── Nav transparent state (over dark hero) ── */
+nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.7)}
+nav:not(.scrolled) .nav-links a:hover{color:#fff}
+nav:not(.scrolled) .btn-secondary{
+  color:rgba(255,255,255,.88);
+  border-color:rgba(255,255,255,.45);
+}
+nav:not(.scrolled) .btn-secondary:hover{
+  color:#fff;border-color:#fff;
+  background:rgba(255,255,255,.08);
+}
+nav:not(.scrolled) .hamburger span{background:#fff}
+nav:not(.scrolled) .nav-logo-text{color:#fff}
+
+
+/* ── Reduced motion accessibility ── */
+@media(prefers-reduced-motion:reduce){
+  .reveal{transition:none;opacity:1;transform:none}
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+
+/* ── Form placeholder visibility ── */
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted-d);opacity:.65}
+.fg select{color:var(--muted-d)}
+.fg select:valid,.fg input:not(:placeholder-shown),.fg textarea:not(:placeholder-shown){color:var(--ink)}
+
+
+@media(max-width:480px){
+  .c-form-wrap{padding:24px 18px;border-radius:var(--r)}
+  .cta-box{padding:36px 20px}
+  .hero-stats{gap:16px}
+  .stat-n{font-size:1.7rem}
+}
+
+
+/* ── Footer email overflow fix ── */
+.fc ul a{word-break:break-word}
 
 /* seo hidden text */
 .seo-geo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
@@ -514,7 +557,7 @@ footer{background:var(--ink-soft);border-top:1px solid rgba(255,255,255,.06);pad
       <div class="hero-img-wrap">
         <div class="h-ring h-ring-out"><div class="ring-dot"></div></div>
         <div class="h-ring h-ring-in"><div class="ring-dot"></div></div>
-        <img class="hero-logo-img" src="kondorlogo1.webp" alt="Kondorflow logo cóndor">
+        <img class="hero-logo-img" src="kondorlogo1.webp" alt="Kondorflow logo cóndor" fetchpriority="high" loading="eager" decoding="async">
       </div>
     </div>
   </div>
