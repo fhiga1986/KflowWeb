@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¡Gracias por escribirnos! — Kondorflow</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0f0f14">
+<meta name="theme-color" content="#4B02F3">
 <link rel="icon" type="image/png" href="kondorlogo1.webp">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J55EJNXZVR"></script>
@@ -22,12 +22,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
 <style>
+:root {
+  /* ── Paleta oficial de marca ── */
+  --color-primary:   #4B02F3;  /* Violeta eléctrico: color primario */
+  --color-secondary: #490FCD;  /* Violeta profundo: fondos alternos y profundidad */
+  --color-accent:    #C1FF72;  /* Verde lima: acciones principales y acentos puntuales */
+  --color-white:     #FFFFFF;  /* Blanco: superficies y texto sobre violeta */
+
+  /* Canales RGB de la paleta para transparencias: rgba(var(--color-…-rgb), .5) */
+  --color-primary-rgb:   75, 2, 243;
+  --color-secondary-rgb: 73, 15, 205;
+  --color-accent-rgb:    193, 255, 114;
+  --color-white-rgb:     255, 255, 255;
+  --color-ink-rgb:       17, 16, 42;
+
+  /* Auxiliares funcionales (legibilidad y estados; no son colores de marca) */
+  --color-ink:          #11102A;  /* texto principal y texto sobre lima */
+  --color-accent-hover: #B0F45E;
+
+  /* Texto sobre superficies violetas */
+  --on-brand:       var(--color-white);
+  --on-brand-muted: rgba(var(--color-white-rgb), .8);
+
+  --gradient-brand: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+
+  /* Terceros: WhatsApp conserva su color de marca para que se reconozca */
+  --color-whatsapp:      #25D366;
+  --color-whatsapp-dark: #128C7E;
+  --color-whatsapp-rgb:  37, 211, 102;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{overflow-x:hidden;scroll-behavior:smooth}
 body{
   font-family:'Plus Jakarta Sans',system-ui,sans-serif;
-  background:#0f0f14;
-  color:#fff;
+  background:var(--gradient-brand);
+  color:var(--color-white);
   min-height:100vh;
   display:flex;
   flex-direction:column;
@@ -43,15 +72,15 @@ body{
 .bg-mesh{
   position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
-    radial-gradient(ellipse 700px 600px at 15% 40%, rgba(197,95,255,.13) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 400px at 85% 65%, rgba(0,212,255,.10) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 300px at 50% 90%, rgba(124,92,252,.08) 0%, transparent 70%);
+    radial-gradient(ellipse 700px 600px at 15% 40%, rgba(var(--color-white-rgb),.12) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 400px at 85% 65%, rgba(var(--color-secondary-rgb),.8) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 50% 90%, rgba(var(--color-white-rgb),.06) 0%, transparent 70%);
 }
 .bg-grid{
   position:fixed;inset:0;pointer-events:none;z-index:0;
   background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    linear-gradient(rgba(var(--color-white-rgb),.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(var(--color-white-rgb),.05) 1px,transparent 1px);
   background-size:64px 64px;
   mask-image:radial-gradient(ellipse at center,black 10%,transparent 72%);
 }
@@ -74,8 +103,8 @@ body{
 /* ── Card ── */
 .card{
   position:relative;z-index:1;
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(255,255,255,.10);
+  background:rgba(var(--color-white-rgb),.08);
+  border:1px solid rgba(var(--color-white-rgb),.18);
   border-radius:28px;
   padding:60px 52px;
   max-width:560px;
@@ -91,13 +120,13 @@ body{
 .card::before{
   content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
   width:70%;height:1px;
-  background:linear-gradient(90deg,transparent,#c55fff,#00d4ff,transparent);
+  background:linear-gradient(90deg,transparent,var(--color-accent),transparent);
 }
 /* inner glow */
 .card::after{
   content:'';position:absolute;
   width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(197,95,255,.07) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(var(--color-white-rgb),.08) 0%,transparent 70%);
   top:50%;left:50%;transform:translate(-50%,-50%);
   pointer-events:none;
   animation:pulse-soft 5s ease-in-out infinite;
@@ -114,14 +143,12 @@ body{
 }
 .logo-img{
   width:40px;height:40px;object-fit:cover;border-radius:13px;
-  filter:drop-shadow(0 0 12px rgba(197,95,255,.65));
+  box-shadow:0 0 0 1px rgba(var(--color-white-rgb),.4);
 }
 .logo-txt{
   font-family:'Cormorant Garamond',Georgia,serif;
   font-size:1.25rem;font-weight:700;letter-spacing:.08em;
-  background:linear-gradient(135deg,#c55fff,#7c5cfc,#00d4ff);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
+  color:var(--color-white);
 }
 
 /* ── Condor emoji big ── */
@@ -131,7 +158,7 @@ body{
 }
 .condor-img{
   width:120px;height:120px;object-fit:cover;border-radius:28px;
-  filter:drop-shadow(0 0 28px rgba(197,95,255,.6)) drop-shadow(0 0 60px rgba(0,212,255,.25));
+  box-shadow:0 0 0 1.5px rgba(var(--color-white-rgb),.35),0 20px 40px -10px rgba(var(--color-ink-rgb),.5),0 0 40px rgba(var(--color-accent-rgb),.2);
   animation:bounce 2.5s ease-in-out infinite;
 }
 @keyframes bounce{
@@ -141,13 +168,13 @@ body{
 .condor-ring{
   position:absolute;
   border-radius:50%;
-  border:1px solid rgba(197,95,255,.2);
+  border:1px solid rgba(var(--color-white-rgb),.25);
   animation:rot 12s linear infinite;
   width:160px;height:160px;
 }
 .condor-ring-2{
   width:130px;height:130px;
-  border-color:rgba(0,212,255,.15);
+  border-color:rgba(var(--color-accent-rgb),.35);
   animation:rot 9s linear infinite reverse;
 }
 @keyframes rot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
@@ -155,22 +182,22 @@ body{
   position:absolute;width:6px;height:6px;border-radius:50%;
   top:-3px;left:50%;transform:translateX(-50%);
 }
-.condor-ring .ring-dot{background:#00d4ff;box-shadow:0 0 8px #00d4ff}
-.condor-ring-2 .ring-dot{background:#c55fff;box-shadow:0 0 8px #c55fff}
+.condor-ring .ring-dot{background:var(--color-accent);box-shadow:0 0 8px var(--color-accent)}
+.condor-ring-2 .ring-dot{background:var(--color-white);box-shadow:0 0 8px var(--color-white)}
 
 /* ── Badge ── */
 .badge{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.22);
+  background:rgba(var(--color-accent-rgb),.12);border:1px solid rgba(var(--color-accent-rgb),.4);
   border-radius:50px;padding:5px 15px;
   font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
-  color:#00d4ff;margin-bottom:18px;
+  color:var(--color-accent);margin-bottom:18px;
   position:relative;z-index:1;
   animation:fadeUp .5s ease .3s both;
 }
 .badge-dot{
   width:6px;height:6px;border-radius:50%;
-  background:#00d4ff;animation:blink 2s infinite;
+  background:var(--color-accent);animation:blink 2s infinite;
 }
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -184,21 +211,17 @@ body{
   position:relative;z-index:1;
   animation:fadeUp .5s ease .4s both;
 }
-.holo{
-  background:linear-gradient(135deg,#c55fff,#7c5cfc,#00d4ff);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
+.holo{color:var(--color-accent)}
 
 /* ── Subtitle ── */
 .subtitle{
-  font-size:.97rem;color:rgba(255,255,255,.58);
+  font-size:.97rem;color:var(--on-brand-muted);
   font-weight:300;line-height:1.75;
   margin-bottom:36px;
   position:relative;z-index:1;
   animation:fadeUp .5s ease .5s both;
 }
-.subtitle strong{color:rgba(255,255,255,.85);font-weight:500}
+.subtitle strong{color:var(--color-white);font-weight:500}
 
 /* ── Steps ── */
 .steps{
@@ -209,25 +232,25 @@ body{
 }
 .step-item{
   display:flex;align-items:flex-start;gap:14px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.07);
+  background:rgba(var(--color-white-rgb),.08);
+  border:1px solid rgba(var(--color-white-rgb),.16);
   border-radius:12px;padding:16px 18px;
   transition:border-color .3s,background .3s;
 }
 .step-item:hover{
-  border-color:rgba(197,95,255,.22);
-  background:rgba(197,95,255,.05);
+  border-color:rgba(var(--color-accent-rgb),.55);
+  background:rgba(var(--color-white-rgb),.1);
 }
 .step-ico{
   width:36px;height:36px;flex-shrink:0;border-radius:9px;
-  background:linear-gradient(135deg,#c55fff,#7c5cfc);
+  background:rgba(var(--color-white-rgb),.14);
   display:flex;align-items:center;justify-content:center;font-size:.95rem;
 }
 .step-txt h4{
   font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:.95rem;font-weight:600;color:#fff;margin-bottom:3px;
+  font-size:.95rem;font-weight:600;color:var(--color-white);margin-bottom:3px;
 }
-.step-txt p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5;font-weight:300}
+.step-txt p{font-size:.82rem;color:var(--on-brand-muted);line-height:1.5;font-weight:300}
 
 /* ── Divider ── */
 .divider{
@@ -236,8 +259,8 @@ body{
   position:relative;z-index:1;
   animation:fadeUp .5s ease .6s both;
 }
-.dline{flex:1;height:1px;background:rgba(255,255,255,.08)}
-.dtxt{font-size:.68rem;color:rgba(255,255,255,.28);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.dline{flex:1;height:1px;background:rgba(var(--color-white-rgb),.2)}
+.dtxt{font-size:.68rem;color:var(--on-brand-muted);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
 
 /* ── Buttons ── */
 .btn-group{
@@ -253,37 +276,41 @@ body{
   border:none;cursor:pointer;transition:all .3s ease;letter-spacing:.01em;
 }
 .btn-wa{
-  background:linear-gradient(135deg,#25D366,#128C7E);
-  color:#fff;box-shadow:0 4px 18px rgba(37,211,102,.3);
+  background:linear-gradient(135deg,var(--color-whatsapp),var(--color-whatsapp-dark));
+  color:var(--color-white);box-shadow:0 4px 18px rgba(var(--color-whatsapp-rgb),.3);
 }
-.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(37,211,102,.48)}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(var(--color-whatsapp-rgb),.48)}
 .btn-primary{
-  background:linear-gradient(135deg,#c55fff,#7c5cfc);
-  color:#fff;box-shadow:0 4px 18px rgba(124,92,252,.35);
+  background:var(--color-white);
+  color:var(--color-primary);box-shadow:0 4px 18px rgba(var(--color-ink-rgb),.2);
 }
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,92,252,.52)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(var(--color-ink-rgb),.3)}
 .btn-ghost{
-  background:transparent;color:rgba(255,255,255,.55);
-  border:1.5px solid rgba(255,255,255,.18);font-size:.84rem;
+  background:transparent;color:var(--on-brand-muted);
+  border:1.5px solid rgba(var(--color-white-rgb),.45);font-size:.84rem;
 }
-.btn-ghost:hover{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.85);transform:translateY(-1px)}
+.btn-ghost:hover{border-color:rgba(var(--color-white-rgb),.7);color:var(--color-white);transform:translateY(-1px)}
 
 /* ── Footer note ── */
 .footer-note{
   margin-top:28px;font-size:.73rem;
-  color:rgba(255,255,255,.22);line-height:1.6;text-align:center;
+  color:var(--on-brand-muted);line-height:1.6;text-align:center;
   position:relative;z-index:1;
   animation:fadeUp .5s ease .7s both;
 }
-.footer-note a{color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s}
-.footer-note a:hover{color:rgba(255,255,255,.65)}
+.footer-note a{color:var(--on-brand-muted);text-decoration:none;transition:color .2s}
+.footer-note a:hover{color:var(--color-accent)}
 
 /* ── Countdown ── */
 .countdown-wrap{
-  margin-top:12px;font-size:.76rem;color:rgba(255,255,255,.32);
+  margin-top:12px;font-size:.76rem;color:var(--on-brand-muted);
   position:relative;z-index:1;
 }
-#countdown{color:#00d4ff;font-weight:600}
+#countdown{color:var(--color-accent);font-weight:600}
+
+/* ── Foco visible y selección ── */
+:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
+::selection{background:var(--color-accent);color:var(--color-ink)}
 
 /* ── Responsive ── */
 @media(max-width:580px){.card{padding:44px 28px}}
@@ -400,7 +427,7 @@ body{
 // ── Floating particles ────────────────────────────────
 (function(){
   const wrap = document.getElementById('particles');
-  const colors = ['#c55fff','#7c5cfc','#00d4ff','rgba(197,95,255,.6)','rgba(0,212,255,.5)'];
+  const colors = ['var(--color-accent)','var(--color-white)','rgba(var(--color-accent-rgb),.6)','rgba(var(--color-white-rgb),.5)'];
   for(let i = 0; i < 22; i++){
     const el = document.createElement('div');
     el.className = 'particle';

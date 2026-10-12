@@ -7,14 +7,45 @@
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="kondorlogo1.png">
 <style>
+:root {
+  /* ── Paleta oficial de marca ── */
+  --color-primary:   #4B02F3;  /* Violeta eléctrico: color primario */
+  --color-secondary: #490FCD;  /* Violeta profundo: fondos alternos y profundidad */
+  --color-accent:    #C1FF72;  /* Verde lima: acciones principales y acentos puntuales */
+  --color-white:     #FFFFFF;  /* Blanco: superficies y texto sobre violeta */
+
+  /* Canales RGB de la paleta para transparencias: rgba(var(--color-…-rgb), .5) */
+  --color-primary-rgb:   75, 2, 243;
+  --color-secondary-rgb: 73, 15, 205;
+  --color-accent-rgb:    193, 255, 114;
+  --color-white-rgb:     255, 255, 255;
+  --color-ink-rgb:       17, 16, 42;
+
+  /* Auxiliares funcionales (legibilidad y estados; no son colores de marca) */
+  --color-ink:          #11102A;  /* texto principal y texto sobre lima */
+  --color-accent-hover: #B0F45E;
+
+  /* Texto sobre superficies violetas */
+  --on-brand:       var(--color-white);
+  --on-brand-muted: rgba(var(--color-white-rgb), .8);
+
+  --gradient-brand: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+
+  /* Terceros: WhatsApp conserva su color de marca para que se reconozca */
+  --color-whatsapp:      #25D366;
+  --color-whatsapp-dark: #128C7E;
+  --color-whatsapp-rgb:  37, 211, 102;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',system-ui,sans-serif;background:#0f0f14;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--gradient-brand);color:var(--color-white);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
 .wrap{max-width:460px}
-.num{font-size:5.5rem;font-weight:700;line-height:1;background:linear-gradient(135deg,#c55fff,#7c5cfc,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px}
-h1{font-size:1.35rem;font-weight:500;color:rgba(255,255,255,.82);margin-bottom:11px}
-p{font-size:.88rem;color:rgba(255,255,255,.42);line-height:1.7;margin-bottom:30px}
-a{display:inline-block;padding:12px 26px;border-radius:50px;background:linear-gradient(135deg,#c55fff,#7c5cfc);color:#fff;text-decoration:none;font-size:.86rem;font-weight:500}
-a:hover{opacity:.85}
+.num{font-size:5.5rem;font-weight:700;line-height:1;color:var(--color-accent);margin-bottom:14px}
+h1{font-size:1.35rem;font-weight:500;color:var(--color-white);margin-bottom:11px}
+p{font-size:.88rem;color:var(--on-brand-muted);line-height:1.7;margin-bottom:30px}
+a{display:inline-block;padding:12px 26px;border-radius:50px;background:var(--color-accent);color:var(--color-ink);text-decoration:none;font-size:.86rem;font-weight:500}
+a:hover{background:var(--color-accent-hover)}
+:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
+::selection{background:var(--color-accent);color:var(--color-ink)}
 </style>
 </head>
 <body>
