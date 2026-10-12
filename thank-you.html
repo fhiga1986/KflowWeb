@@ -2,11 +2,14 @@
 <html lang="es-PE">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>¡Gracias por escribirnos! — Kondorflow</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#4B02F3">
-<link rel="icon" type="image/png" href="kondorlogo1.webp">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light only">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J55EJNXZVR"></script>
 <script>
@@ -19,448 +22,180 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
 <style>
+/* ── Sistema de diseño v3 (mismo que index.html) ── */
 :root {
-  /* ── Paleta oficial de marca ── */
-  --color-primary:   #4B02F3;  /* Violeta eléctrico: color primario */
-  --color-secondary: #490FCD;  /* Violeta profundo: fondos alternos y profundidad */
-  --color-accent:    #C1FF72;  /* Verde lima: acciones principales y acentos puntuales */
-  --color-white:     #FFFFFF;  /* Blanco: superficies y texto sobre violeta */
+  --color-primary:   #4B02F3;  /* Violeta eléctrico: botones, enlaces e íconos */
+  --color-secondary: #490FCD;  /* Violeta profundo: hover */
+  --color-accent:    #C1FF72;  /* Verde lima: solo logo y detalles mínimos */
+  --color-white:     #FFFFFF;
 
-  /* Canales RGB de la paleta para transparencias: rgba(var(--color-…-rgb), .5) */
-  --color-primary-rgb:   75, 2, 243;
-  --color-secondary-rgb: 73, 15, 205;
-  --color-accent-rgb:    193, 255, 114;
-  --color-white-rgb:     255, 255, 255;
-  --color-ink-rgb:       17, 16, 42;
+  --color-primary-rgb:  75, 2, 243;
+  --color-ink-rgb:      24, 19, 54;
+  --color-white-rgb:    255, 255, 255;
+  --color-lavender-rgb: 185, 168, 255;
+  --color-accent-rgb:   193, 255, 114;
 
-  /* Auxiliares funcionales (legibilidad y estados; no son colores de marca) */
-  --color-ink:          #11102A;  /* texto principal y texto sobre lima */
-  --color-accent-hover: #B0F45E;
+  --color-ink:        #181336;  /* titulares */
+  --color-text:       #3E3A57;  /* texto de lectura */
+  --color-text-muted: #625E7C;  /* texto secundario */
+  --color-paper:      #F7F6FB;  /* fondo de la página */
+  --color-tint:       #F2EEFF;  /* chips de íconos */
+  --color-border:     #E7E5F0;
+  --color-lavender:   #B9A8FF;
 
-  /* Texto sobre superficies violetas */
-  --on-brand:       var(--color-white);
-  --on-brand-muted: rgba(var(--color-white-rgb), .8);
-
-  --gradient-brand: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-
-  /* Terceros: WhatsApp conserva su color de marca para que se reconozca */
-  --color-whatsapp:      #25D366;
-  --color-whatsapp-dark: #128C7E;
-  --color-whatsapp-rgb:  37, 211, 102;
+  --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --body:    'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --tr: .25s cubic-bezier(.4, 0, .2, 1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{overflow-x:hidden;scroll-behavior:smooth}
-body{
-  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
-  background:var(--gradient-brand);
-  color:var(--color-white);
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:24px;
-  position:relative;
-  overflow:hidden;
-  -webkit-font-smoothing:antialiased;
-}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:40px 20px;font-family:var(--body);font-size:16px;line-height:1.6;color:var(--color-text);background:radial-gradient(60% 45% at 50% 0%,rgba(var(--color-primary-rgb),.08) 0%,transparent 70%),radial-gradient(45% 45% at 100% 100%,rgba(var(--color-lavender-rgb),.2) 0%,transparent 70%),var(--color-paper);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+.ico{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 
-/* ── Background ── */
-.bg-mesh{
-  position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 700px 600px at 15% 40%, rgba(var(--color-white-rgb),.12) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 400px at 85% 65%, rgba(var(--color-secondary-rgb),.8) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 300px at 50% 90%, rgba(var(--color-white-rgb),.06) 0%, transparent 70%);
+.card{position:relative;z-index:1;width:100%;max-width:560px;padding:44px 44px 36px;text-align:center;background:var(--color-white);border:1px solid var(--color-border);border-radius:24px;box-shadow:0 2px 6px rgba(var(--color-ink-rgb),.04),0 28px 60px -30px rgba(var(--color-ink-rgb),.3);animation:card-in .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes card-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:30px;text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:22%}
+.wordmark{font-family:var(--display);font-size:1.12rem;font-weight:700;letter-spacing:.1em;color:var(--color-ink)}
+.status{width:76px;height:76px;margin:0 auto 22px;display:grid;place-items:center;border-radius:50%;background:var(--color-tint);color:var(--color-primary);box-shadow:0 0 0 8px rgba(var(--color-primary-rgb),.05)}
+.status .ico{width:34px;height:34px;stroke-width:2}
+.kicker{margin-bottom:10px;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-primary)}
+.title{margin-bottom:12px;font-family:var(--display);font-size:clamp(2rem,6vw,2.6rem);font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--color-ink);text-wrap:balance}
+.title em{font-style:italic;color:var(--color-primary)}
+.subtitle{max-width:440px;margin:0 auto 28px;font-size:1rem;line-height:1.7;color:var(--color-text-muted);text-wrap:pretty}
+.subtitle strong{font-weight:600;color:var(--color-ink)}
+.steps{display:grid;gap:10px;margin-bottom:28px;text-align:left;list-style:none}
+.step{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--color-paper);border:1px solid var(--color-border)}
+.step-ico{width:38px;height:38px;flex-shrink:0;display:grid;place-items:center;border-radius:11px;background:var(--color-white);border:1px solid var(--color-border);color:var(--color-primary)}
+.step h2{margin-bottom:2px;font-size:.95rem;font-weight:600;line-height:1.4;color:var(--color-ink)}
+.step p{font-size:.87rem;line-height:1.55;color:var(--color-text-muted)}
+.divider{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.dline{flex:1;height:1px;background:var(--color-border)}
+.dtxt{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--color-text-muted)}
+.btn-group{display:grid;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 24px;border-radius:999px;border:1.5px solid transparent;font-family:var(--body);font-size:.92rem;font-weight:600;line-height:1.2;text-decoration:none;cursor:pointer;transition:background-color var(--tr),border-color var(--tr),color var(--tr),box-shadow var(--tr),transform var(--tr)}
+.btn .ico{width:18px;height:18px}
+.btn-primary{background:var(--color-primary);color:var(--color-white);box-shadow:0 1px 2px rgba(var(--color-primary-rgb),.18),0 10px 22px -10px rgba(var(--color-primary-rgb),.6)}
+.btn-primary:hover{background:var(--color-secondary);transform:translateY(-1px)}
+.btn-ghost{background:var(--color-white);color:var(--color-ink);border-color:rgba(var(--color-ink-rgb),.16)}
+.btn-ghost:hover{color:var(--color-primary);border-color:var(--color-primary)}
+.btn-text{min-height:44px;background:none;color:var(--color-text-muted);font-weight:500}
+.btn-text:hover{color:var(--color-primary)}
+.footer-note{position:relative;z-index:1;font-size:.82rem;line-height:1.6;text-align:center;color:var(--color-text-muted)}
+.footer-note a{color:var(--color-primary);text-decoration:none}
+.footer-note a:hover{color:var(--color-primary);text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px}
+::selection{background:rgba(var(--color-primary-rgb),.16);color:var(--color-ink)}
+@media (max-width:560px){
+  body{padding:28px 16px}
+  .card{padding:34px 22px 28px;border-radius:20px}
 }
-.bg-grid{
-  position:fixed;inset:0;pointer-events:none;z-index:0;
-  background-image:
-    linear-gradient(rgba(var(--color-white-rgb),.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(var(--color-white-rgb),.05) 1px,transparent 1px);
-  background-size:64px 64px;
-  mask-image:radial-gradient(ellipse at center,black 10%,transparent 72%);
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
-
-/* ── Floating particles ── */
-.particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.particle{
-  position:absolute;
-  border-radius:50%;
-  animation:drift linear infinite;
-  opacity:0;
-}
-@keyframes drift{
-  0%{transform:translateY(100vh) rotate(0deg);opacity:0}
-  10%{opacity:1}
-  90%{opacity:.6}
-  100%{transform:translateY(-20vh) rotate(360deg);opacity:0}
-}
-
-/* ── Card ── */
-.card{
-  position:relative;z-index:1;
-  background:rgba(var(--color-white-rgb),.08);
-  border:1px solid rgba(var(--color-white-rgb),.18);
-  border-radius:28px;
-  padding:60px 52px;
-  max-width:560px;
-  width:100%;
-  text-align:center;
-  animation:cardIn .8s cubic-bezier(.34,1.46,.64,1) both;
-  overflow:hidden;
-}
-@keyframes cardIn{
-  from{opacity:0;transform:translateY(50px) scale(.94)}
-  to{opacity:1;transform:translateY(0) scale(1)}
-}
-.card::before{
-  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:70%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--color-accent),transparent);
-}
-/* inner glow */
-.card::after{
-  content:'';position:absolute;
-  width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(var(--color-white-rgb),.08) 0%,transparent 70%);
-  top:50%;left:50%;transform:translate(-50%,-50%);
-  pointer-events:none;
-  animation:pulse-soft 5s ease-in-out infinite;
-}
-@keyframes pulse-soft{
-  0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6}
-  50%{transform:translate(-50%,-50%) scale(1.3);opacity:1}
-}
-
-/* ── Logo ── */
-.logo-wrap{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  margin-bottom:44px;text-decoration:none;position:relative;z-index:1;
-}
-.logo-img{
-  width:40px;height:40px;object-fit:cover;border-radius:13px;
-  box-shadow:0 0 0 1px rgba(var(--color-white-rgb),.4);
-}
-.logo-txt{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:1.25rem;font-weight:700;letter-spacing:.08em;
-  color:var(--color-white);
-}
-
-/* ── Condor emoji big ── */
-.condor-wrap{
-  position:relative;display:inline-flex;align-items:center;justify-content:center;
-  margin-bottom:28px;z-index:1;
-}
-.condor-img{
-  width:120px;height:120px;object-fit:cover;border-radius:28px;
-  box-shadow:0 0 0 1.5px rgba(var(--color-white-rgb),.35),0 20px 40px -10px rgba(var(--color-ink-rgb),.5),0 0 40px rgba(var(--color-accent-rgb),.2);
-  animation:bounce 2.5s ease-in-out infinite;
-}
-@keyframes bounce{
-  0%,100%{transform:translateY(0) rotate(-1deg)}
-  50%{transform:translateY(-12px) rotate(1deg)}
-}
-.condor-ring{
-  position:absolute;
-  border-radius:50%;
-  border:1px solid rgba(var(--color-white-rgb),.25);
-  animation:rot 12s linear infinite;
-  width:160px;height:160px;
-}
-.condor-ring-2{
-  width:130px;height:130px;
-  border-color:rgba(var(--color-accent-rgb),.35);
-  animation:rot 9s linear infinite reverse;
-}
-@keyframes rot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-.ring-dot{
-  position:absolute;width:6px;height:6px;border-radius:50%;
-  top:-3px;left:50%;transform:translateX(-50%);
-}
-.condor-ring .ring-dot{background:var(--color-accent);box-shadow:0 0 8px var(--color-accent)}
-.condor-ring-2 .ring-dot{background:var(--color-white);box-shadow:0 0 8px var(--color-white)}
-
-/* ── Badge ── */
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(var(--color-accent-rgb),.12);border:1px solid rgba(var(--color-accent-rgb),.4);
-  border-radius:50px;padding:5px 15px;
-  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--color-accent);margin-bottom:18px;
-  position:relative;z-index:1;
-  animation:fadeUp .5s ease .3s both;
-}
-.badge-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--color-accent);animation:blink 2s infinite;
-}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-
-/* ── Title ── */
-.title{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:clamp(2rem,6vw,2.8rem);
-  font-weight:700;line-height:1.1;
-  margin-bottom:14px;
-  position:relative;z-index:1;
-  animation:fadeUp .5s ease .4s both;
-}
-.holo{color:var(--color-accent)}
-
-/* ── Subtitle ── */
-.subtitle{
-  font-size:.97rem;color:var(--on-brand-muted);
-  font-weight:300;line-height:1.75;
-  margin-bottom:36px;
-  position:relative;z-index:1;
-  animation:fadeUp .5s ease .5s both;
-}
-.subtitle strong{color:var(--color-white);font-weight:500}
-
-/* ── Steps ── */
-.steps{
-  display:flex;flex-direction:column;gap:12px;
-  margin-bottom:36px;text-align:left;
-  position:relative;z-index:1;
-  animation:fadeUp .5s ease .55s both;
-}
-.step-item{
-  display:flex;align-items:flex-start;gap:14px;
-  background:rgba(var(--color-white-rgb),.08);
-  border:1px solid rgba(var(--color-white-rgb),.16);
-  border-radius:12px;padding:16px 18px;
-  transition:border-color .3s,background .3s;
-}
-.step-item:hover{
-  border-color:rgba(var(--color-accent-rgb),.55);
-  background:rgba(var(--color-white-rgb),.1);
-}
-.step-ico{
-  width:36px;height:36px;flex-shrink:0;border-radius:9px;
-  background:rgba(var(--color-white-rgb),.14);
-  display:flex;align-items:center;justify-content:center;font-size:.95rem;
-}
-.step-txt h4{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:.95rem;font-weight:600;color:var(--color-white);margin-bottom:3px;
-}
-.step-txt p{font-size:.82rem;color:var(--on-brand-muted);line-height:1.5;font-weight:300}
-
-/* ── Divider ── */
-.divider{
-  display:flex;align-items:center;gap:12px;
-  margin-bottom:24px;
-  position:relative;z-index:1;
-  animation:fadeUp .5s ease .6s both;
-}
-.dline{flex:1;height:1px;background:rgba(var(--color-white-rgb),.2)}
-.dtxt{font-size:.68rem;color:var(--on-brand-muted);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
-
-/* ── Buttons ── */
-.btn-group{
-  display:flex;flex-direction:column;gap:11px;
-  position:relative;z-index:1;
-  animation:fadeUp .5s ease .65s both;
-}
-.btn{
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  padding:14px 28px;border-radius:50px;
-  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
-  font-size:.88rem;font-weight:500;text-decoration:none;
-  border:none;cursor:pointer;transition:all .3s ease;letter-spacing:.01em;
-}
-.btn-wa{
-  background:linear-gradient(135deg,var(--color-whatsapp),var(--color-whatsapp-dark));
-  color:var(--color-white);box-shadow:0 4px 18px rgba(var(--color-whatsapp-rgb),.3);
-}
-.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(var(--color-whatsapp-rgb),.48)}
-.btn-primary{
-  background:var(--color-white);
-  color:var(--color-primary);box-shadow:0 4px 18px rgba(var(--color-ink-rgb),.2);
-}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(var(--color-ink-rgb),.3)}
-.btn-ghost{
-  background:transparent;color:var(--on-brand-muted);
-  border:1.5px solid rgba(var(--color-white-rgb),.45);font-size:.84rem;
-}
-.btn-ghost:hover{border-color:rgba(var(--color-white-rgb),.7);color:var(--color-white);transform:translateY(-1px)}
-
-/* ── Footer note ── */
-.footer-note{
-  margin-top:28px;font-size:.73rem;
-  color:var(--on-brand-muted);line-height:1.6;text-align:center;
-  position:relative;z-index:1;
-  animation:fadeUp .5s ease .7s both;
-}
-.footer-note a{color:var(--on-brand-muted);text-decoration:none;transition:color .2s}
-.footer-note a:hover{color:var(--color-accent)}
-
-/* ── Countdown ── */
-.countdown-wrap{
-  margin-top:12px;font-size:.76rem;color:var(--on-brand-muted);
-  position:relative;z-index:1;
-}
-#countdown{color:var(--color-accent);font-weight:600}
-
-/* ── Foco visible y selección ── */
-:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
-::selection{background:var(--color-accent);color:var(--color-ink)}
-
-/* ── Responsive ── */
-@media(max-width:580px){.card{padding:44px 28px}}
-@media(max-width:380px){.card{padding:32px 20px;border-radius:20px}}
+/* ── Cuenta regresiva ── */
+.countdown{margin-top:14px;font-size:.84rem;color:var(--color-text-muted)}
+.countdown strong{font-weight:600;color:var(--color-primary)}
+.countdown button{margin-left:6px;padding:4px 6px;background:none;border:0;border-radius:6px;font:inherit;font-weight:600;color:var(--color-primary);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 </style>
 </head>
 <body>
 
-<div class="bg-mesh"    aria-hidden="true"></div>
-<div class="bg-grid"    aria-hidden="true"></div>
-<div class="particles"  id="particles" aria-hidden="true"></div>
+<!-- Íconos: Lucide v0.460.0 (licencia ISC, https://lucide.dev) + glifo de WhatsApp -->
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/> <path d="M19 12H5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/> <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+  <symbol id="i-mailcheck" viewBox="0 0 24 24"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"/> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/> <path d="m16 19 2 2 4-4"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/> <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/> <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+</svg>
 
-<div class="card" role="main">
-
-  <!-- Logo -->
-  <a href="https://kondorflow.com" class="logo-wrap" aria-label="Volver a Kondorflow">
-    <img class="logo-img" src="kondorlogo1.webp" alt="Kondorflow logo">
-    <span class="logo-txt">KONDORFLOW</span>
+<main class="card">
+  <a href="https://kondorflow.com" class="brand" aria-label="Kondorflow, volver al inicio">
+    <img src="/kondorlogo1.webp" width="36" height="36" alt="">
+    <span class="wordmark">KONDORFLOW</span>
   </a>
 
-  <!-- Condor animado -->
-  <div class="condor-wrap" aria-hidden="true">
-    <div class="condor-ring"><div class="ring-dot"></div></div>
-    <div class="condor-ring condor-ring-2"><div class="ring-dot"></div></div>
-    <img class="condor-img" src="kondorlogo1.webp" alt="Kondorflow cóndor">
-  </div>
+  <div class="status" aria-hidden="true"><svg class="ico" focusable="false"><use href="#i-mailcheck"/></svg></div>
+  <p class="kicker">Mensaje recibido</p>
+  <h1 class="title">¡Gracias por <em>escribirnos</em>!</h1>
+  <p class="subtitle">Tu mensaje llegó perfectamente. Te respondemos en <strong>menos de 24 horas hábiles</strong>, prometido.</p>
 
-  <!-- Badge -->
-  <div class="badge">
-    <span class="badge-dot"></span>
-    Mensaje recibido
-  </div>
+  <ul class="steps">
+    <li class="step">
+      <span class="step-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-inbox"/></svg></span>
+      <div><h2>Revisamos tu mensaje</h2><p>Nuestro equipo leerá tu consulta y preparará la mejor propuesta para ti.</p></div>
+    </li>
+    <li class="step">
+      <span class="step-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></span>
+      <div><h2>Te contactamos pronto</h2><p>Te escribiremos por WhatsApp o email para coordinar una reunión.</p></div>
+    </li>
+    <li class="step">
+      <span class="step-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+      <div><h2>¡Empezamos a trabajar juntos!</h2><p>Recuerda: pagas solo cuando apruebas y recibes tu producto final.</p></div>
+    </li>
+  </ul>
 
-  <!-- Título -->
-  <h1 class="title">
-    ¡Gracias por<br>
-    <span class="holo">escribirnos!</span> 🎉
-  </h1>
+  <div class="divider"><div class="dline"></div><span class="dtxt">¿Necesitas respuesta urgente?</span><div class="dline"></div></div>
 
-  <!-- Subtítulo -->
-  <p class="subtitle">
-    Tu mensaje llegó perfectamente.<br>
-    Te respondemos en <strong>menos de 24 horas hábiles</strong> — prometido.
-  </p>
-
-  <!-- Pasos -->
-  <div class="steps" role="list">
-    <div class="step-item" role="listitem">
-      <div class="step-ico">📩</div>
-      <div class="step-txt">
-        <h4>Revisamos tu mensaje</h4>
-        <p>Nuestro equipo leerá tu consulta y preparará la mejor propuesta para ti.</p>
-      </div>
-    </div>
-    <div class="step-item" role="listitem">
-      <div class="step-ico">📞</div>
-      <div class="step-txt">
-        <h4>Te contactamos pronto</h4>
-        <p>Te escribiremos por WhatsApp o email para coordinar una reunión.</p>
-      </div>
-    </div>
-    <div class="step-item" role="listitem">
-      <div class="step-ico">🚀</div>
-      <div class="step-txt">
-        <h4>¡Empezamos a trabajar juntos!</h4>
-        <p>Recuerda: pagas solo cuando apruebas y recibes tu producto final.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Divider -->
-  <div class="divider">
-    <div class="dline"></div>
-    <span class="dtxt">¿Necesitas respuesta urgente?</span>
-    <div class="dline"></div>
-  </div>
-
-  <!-- Botones -->
   <div class="btn-group">
     <a href="https://wa.me/51943489132?text=Hola%20Kondorflow%2C%20acabo%20de%20enviar%20un%20formulario%20y%20necesito%20respuesta%20pronto"
-       class="btn btn-wa"
+       class="btn btn-primary"
        onclick="gtag('event','whatsapp_click',{event_category:'thank_you',event_label:'urgent_wa'})">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Escribir ahora por WhatsApp
+      <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Escribir ahora por WhatsApp
     </a>
     <a href="https://kondorflow.com/#servicios"
-       class="btn btn-primary"
+       class="btn btn-ghost"
        onclick="gtag('event','back_services',{event_category:'thank_you',event_label:'explore_services'})">
-      ✨ Explorar nuestros servicios
+      Explorar nuestros servicios<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
     </a>
     <a href="https://kondorflow.com"
-       class="btn btn-ghost"
+       class="btn btn-text"
        onclick="gtag('event','back_home',{event_category:'thank_you',event_label:'home'})">
-      ← Volver al inicio
+      <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow-left"/></svg>Volver al inicio
     </a>
   </div>
 
-  <!-- Countdown -->
-  <div class="countdown-wrap" aria-live="polite">
-    Volviendo al inicio en <span id="countdown">10</span>s
-  </div>
+  <p class="countdown" id="countdownWrap">
+    Volviendo al inicio en <strong><span id="countdown">10</span>&nbsp;s</strong>
+    <button type="button" id="stayBtn">Quedarme aquí</button>
+  </p>
+</main>
 
-</div>
-
-<!-- Footer note -->
-<p class="footer-note">
+<footer class="footer-note">
+  <p>
   Kondorflow · HG Next Gen Solutions · Lima, Perú<br>
   <a href="mailto:info@kondorflow.com">info@kondorflow.com</a>
   &nbsp;·&nbsp;
   <a href="https://wa.me/51943489132">+51 943 489 132</a>
-</p>
+  </p>
+</footer>
 
 <script>
-// ── Floating particles ────────────────────────────────
-(function(){
-  const wrap = document.getElementById('particles');
-  const colors = ['var(--color-accent)','var(--color-white)','rgba(var(--color-accent-rgb),.6)','rgba(var(--color-white-rgb),.5)'];
-  for(let i = 0; i < 22; i++){
-    const el = document.createElement('div');
-    el.className = 'particle';
-    const sz = Math.random() * 5 + 3;
-    el.style.cssText = `
-      left:${Math.random()*100}%;
-      width:${sz}px;height:${sz}px;
-      background:${colors[Math.floor(Math.random()*colors.length)]};
-      animation-duration:${8+Math.random()*12}s;
-      animation-delay:${Math.random()*8}s;
-    `;
-    wrap.appendChild(el);
-  }
-})();
-
-// ── Auto-redirect countdown ───────────────────────────
+// Redirección automática al inicio en 10 s (se cancela al interactuar con la tarjeta)
 let secs = 10;
 const cd = document.getElementById('countdown');
+const wrap = document.getElementById('countdownWrap');
 const timer = setInterval(() => {
   secs--;
-  if(cd) cd.textContent = secs;
-  if(secs <= 0){
+  if (cd) cd.textContent = secs;
+  if (secs <= 0) {
     clearInterval(timer);
     window.location.href = 'https://kondorflow.com';
   }
 }, 1000);
-
-// Cancel countdown if user interacts
-document.querySelector('.card').addEventListener('click', () => {
+function stayHere() {
   clearInterval(timer);
-  const wrap = document.querySelector('.countdown-wrap');
-  if(wrap) wrap.style.display = 'none';
-}, {once: true});
+  if (wrap) wrap.style.display = 'none';
+}
+document.getElementById('stayBtn').addEventListener('click', stayHere);
+document.querySelector('.card').addEventListener('click', stayHere, { once: true });
 </script>
 </body>
 </html>

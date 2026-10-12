@@ -2,58 +2,133 @@
 <html lang="es-PE">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Página no encontrada — Kondorflow</title>
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/png" href="kondorlogo1.png">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light only">
+<!-- Rutas absolutas (/…): GitHub Pages muestra esta página en cualquier URL, también en subcarpetas -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
 <style>
+/* ── Sistema de diseño v3 (mismo que index.html) ── */
 :root {
-  /* ── Paleta oficial de marca ── */
-  --color-primary:   #4B02F3;  /* Violeta eléctrico: color primario */
-  --color-secondary: #490FCD;  /* Violeta profundo: fondos alternos y profundidad */
-  --color-accent:    #C1FF72;  /* Verde lima: acciones principales y acentos puntuales */
-  --color-white:     #FFFFFF;  /* Blanco: superficies y texto sobre violeta */
+  --color-primary:   #4B02F3;  /* Violeta eléctrico: botones, enlaces e íconos */
+  --color-secondary: #490FCD;  /* Violeta profundo: hover */
+  --color-accent:    #C1FF72;  /* Verde lima: solo logo y detalles mínimos */
+  --color-white:     #FFFFFF;
 
-  /* Canales RGB de la paleta para transparencias: rgba(var(--color-…-rgb), .5) */
-  --color-primary-rgb:   75, 2, 243;
-  --color-secondary-rgb: 73, 15, 205;
-  --color-accent-rgb:    193, 255, 114;
-  --color-white-rgb:     255, 255, 255;
-  --color-ink-rgb:       17, 16, 42;
+  --color-primary-rgb:  75, 2, 243;
+  --color-ink-rgb:      24, 19, 54;
+  --color-white-rgb:    255, 255, 255;
+  --color-lavender-rgb: 185, 168, 255;
+  --color-accent-rgb:   193, 255, 114;
 
-  /* Auxiliares funcionales (legibilidad y estados; no son colores de marca) */
-  --color-ink:          #11102A;  /* texto principal y texto sobre lima */
-  --color-accent-hover: #B0F45E;
+  --color-ink:        #181336;  /* titulares */
+  --color-text:       #3E3A57;  /* texto de lectura */
+  --color-text-muted: #625E7C;  /* texto secundario */
+  --color-paper:      #F7F6FB;  /* fondo de la página */
+  --color-tint:       #F2EEFF;  /* chips de íconos */
+  --color-border:     #E7E5F0;
+  --color-lavender:   #B9A8FF;
 
-  /* Texto sobre superficies violetas */
-  --on-brand:       var(--color-white);
-  --on-brand-muted: rgba(var(--color-white-rgb), .8);
-
-  --gradient-brand: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-
-  /* Terceros: WhatsApp conserva su color de marca para que se reconozca */
-  --color-whatsapp:      #25D366;
-  --color-whatsapp-dark: #128C7E;
-  --color-whatsapp-rgb:  37, 211, 102;
+  --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --body:    'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --tr: .25s cubic-bezier(.4, 0, .2, 1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--gradient-brand);color:var(--color-white);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
-.wrap{max-width:460px}
-.num{font-size:5.5rem;font-weight:700;line-height:1;color:var(--color-accent);margin-bottom:14px}
-h1{font-size:1.35rem;font-weight:500;color:var(--color-white);margin-bottom:11px}
-p{font-size:.88rem;color:var(--on-brand-muted);line-height:1.7;margin-bottom:30px}
-a{display:inline-block;padding:12px 26px;border-radius:50px;background:var(--color-accent);color:var(--color-ink);text-decoration:none;font-size:.86rem;font-weight:500}
-a:hover{background:var(--color-accent-hover)}
-:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
-::selection{background:var(--color-accent);color:var(--color-ink)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:40px 20px;font-family:var(--body);font-size:16px;line-height:1.6;color:var(--color-text);background:radial-gradient(60% 45% at 50% 0%,rgba(var(--color-primary-rgb),.08) 0%,transparent 70%),radial-gradient(45% 45% at 100% 100%,rgba(var(--color-lavender-rgb),.2) 0%,transparent 70%),var(--color-paper);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+.ico{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+
+.card{position:relative;z-index:1;width:100%;max-width:560px;padding:44px 44px 36px;text-align:center;background:var(--color-white);border:1px solid var(--color-border);border-radius:24px;box-shadow:0 2px 6px rgba(var(--color-ink-rgb),.04),0 28px 60px -30px rgba(var(--color-ink-rgb),.3);animation:card-in .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes card-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:30px;text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:22%}
+.wordmark{font-family:var(--display);font-size:1.12rem;font-weight:700;letter-spacing:.1em;color:var(--color-ink)}
+.status{width:76px;height:76px;margin:0 auto 22px;display:grid;place-items:center;border-radius:50%;background:var(--color-tint);color:var(--color-primary);box-shadow:0 0 0 8px rgba(var(--color-primary-rgb),.05)}
+.status .ico{width:34px;height:34px;stroke-width:2}
+.kicker{margin-bottom:10px;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-primary)}
+.title{margin-bottom:12px;font-family:var(--display);font-size:clamp(2rem,6vw,2.6rem);font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--color-ink);text-wrap:balance}
+.title em{font-style:italic;color:var(--color-primary)}
+.subtitle{max-width:440px;margin:0 auto 28px;font-size:1rem;line-height:1.7;color:var(--color-text-muted);text-wrap:pretty}
+.subtitle strong{font-weight:600;color:var(--color-ink)}
+.steps{display:grid;gap:10px;margin-bottom:28px;text-align:left;list-style:none}
+.step{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--color-paper);border:1px solid var(--color-border)}
+.step-ico{width:38px;height:38px;flex-shrink:0;display:grid;place-items:center;border-radius:11px;background:var(--color-white);border:1px solid var(--color-border);color:var(--color-primary)}
+.step h2{margin-bottom:2px;font-size:.95rem;font-weight:600;line-height:1.4;color:var(--color-ink)}
+.step p{font-size:.87rem;line-height:1.55;color:var(--color-text-muted)}
+.divider{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.dline{flex:1;height:1px;background:var(--color-border)}
+.dtxt{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--color-text-muted)}
+.btn-group{display:grid;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 24px;border-radius:999px;border:1.5px solid transparent;font-family:var(--body);font-size:.92rem;font-weight:600;line-height:1.2;text-decoration:none;cursor:pointer;transition:background-color var(--tr),border-color var(--tr),color var(--tr),box-shadow var(--tr),transform var(--tr)}
+.btn .ico{width:18px;height:18px}
+.btn-primary{background:var(--color-primary);color:var(--color-white);box-shadow:0 1px 2px rgba(var(--color-primary-rgb),.18),0 10px 22px -10px rgba(var(--color-primary-rgb),.6)}
+.btn-primary:hover{background:var(--color-secondary);transform:translateY(-1px)}
+.btn-ghost{background:var(--color-white);color:var(--color-ink);border-color:rgba(var(--color-ink-rgb),.16)}
+.btn-ghost:hover{color:var(--color-primary);border-color:var(--color-primary)}
+.btn-text{min-height:44px;background:none;color:var(--color-text-muted);font-weight:500}
+.btn-text:hover{color:var(--color-primary)}
+.footer-note{position:relative;z-index:1;font-size:.82rem;line-height:1.6;text-align:center;color:var(--color-text-muted)}
+.footer-note a{color:var(--color-primary);text-decoration:none}
+.footer-note a:hover{color:var(--color-primary);text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px}
+::selection{background:rgba(var(--color-primary-rgb),.16);color:var(--color-ink)}
+@media (max-width:560px){
+  body{padding:28px 16px}
+  .card{padding:34px 22px 28px;border-radius:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+.code{margin-bottom:6px;font-family:var(--display);font-size:clamp(4.2rem,14vw,5.6rem);font-weight:600;line-height:1;letter-spacing:-.02em;color:var(--color-primary);font-variant-numeric:lining-nums}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.links .btn{flex:1 1 180px}
+.btn-group{margin-bottom:12px}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="num">404</div>
-    <h1>Página no encontrada</h1>
-    <p>La página que buscas no existe o fue movida.<br>Regresa al inicio y sigue explorando.</p>
-    <a href="/">← Volver al inicio</a>
+
+<!-- Íconos: Lucide v0.460.0 (licencia ISC, https://lucide.dev) + glifo de WhatsApp -->
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+</svg>
+
+<main class="card">
+  <a href="/" class="brand" aria-label="Kondorflow, ir al inicio">
+    <img src="/kondorlogo1.webp" width="36" height="36" alt="">
+    <span class="wordmark">KONDORFLOW</span>
+  </a>
+
+  <p class="code" aria-hidden="true">404</p>
+  <h1 class="title">Página no <em>encontrada</em></h1>
+  <p class="subtitle">La página que buscas no existe o fue movida. Regresa al inicio y sigue explorando.</p>
+
+  <div class="btn-group">
+    <a href="/" class="btn btn-primary">
+      <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-house"/></svg>Volver al inicio
+    </a>
   </div>
+  <nav class="links" aria-label="Accesos rápidos">
+    <a href="/#servicios" class="btn btn-ghost">Ver servicios</a>
+    <a href="/#contacto" class="btn btn-ghost">Contacto</a>
+  </nav>
+</main>
+
+<footer class="footer-note">
+  <p>
+  Kondorflow · HG Next Gen Solutions · Lima, Perú<br>
+  <a href="mailto:info@kondorflow.com">info@kondorflow.com</a> &nbsp;·&nbsp;
+  <a href="https://wa.me/51943489132">+51 943 489 132</a>
+  </p>
+</footer>
 </body>
 </html>

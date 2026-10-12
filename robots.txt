@@ -1,12 +1,10 @@
 User-agent: *
 Allow: /
-Disallow: /pago-exitoso.html
-
-User-agent: Googlebot
-Allow: /
 
 Sitemap: https://kondorflow.com/sitemap.xml
 
 # Kondorflow — HG Next Gen Solutions
 # Lima, Perú — LATAM
 # info@kondorflow.com
+# Nota: las páginas de agradecimiento, pago y error usan <meta name="robots" content="noindex">.
+# No se bloquean aquí para que Google pueda leer esa etiqueta.

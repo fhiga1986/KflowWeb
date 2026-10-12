@@ -1,22 +1,28 @@
 # Kondorflow — Sitio Web Oficial
 
 **HG Next Gen Solutions** · Lima, Perú · LATAM  
-Landing page institucional en HTML/CSS/JS puro — sin frameworks externos.
+Landing page institucional en HTML/CSS/JS puro — sin frameworks externos.  
+Lema: **Scale, Automate, Flow.**
 
 ## 📁 Estructura del repositorio
 
 ```
 /
 ├── index.html                  ← Página principal (landing page completa)
+├── thank-you.html              ← Agradecimiento tras enviar el formulario (/thank-you)
 ├── pago-exitoso.html           ← Página post-pago Mercado Pago
 ├── 404.html                    ← Página de error personalizada
 ├── CNAME                       ← Dominio personalizado GitHub Pages
 ├── sitemap.xml                 ← Mapa del sitio para Google
 ├── robots.txt                  ← Permisos para buscadores
-├── site.webmanifest            ← Config PWA
+├── site.webmanifest            ← Config PWA (íconos icon-192 / icon-512)
 │
-├── kondorlogo1.png             ← Ícono K+cóndor (nav, hero, favicon, footer)
-├── kondorlogo2.png             ← Logo horizontal completo (futura sección hero ampliada)
+├── og-image.jpg                ← Imagen al compartir en redes y WhatsApp (1200×630)
+├── kondorlogo1.png             ← Logo cóndor 1024 px (datos estructurados)
+├── kondorlogo1.webp            ← Logo cóndor 640 px (nav, hero, footer)
+├── favicon.ico / favicon-16x16.png / favicon-32x32.png / apple-touch-icon.png
+├── icon-192.png / icon-512.png ← Íconos de la app web (manifest)
+├── kondorlogo2.png             ← Logo horizontal (sin uso actualmente)
 │
 └── logos de clientes (reemplazar con logos reales):
     ├── logo-save.webp              260×120px, fondo transparente
@@ -24,6 +30,23 @@ Landing page institucional en HTML/CSS/JS puro — sin frameworks externos.
     ├── logo-black-diamond.webp     260×120px, fondo transparente
     └── logo-good-way-clean.webp    260×120px, fondo transparente
 ```
+
+Mientras un logo de cliente sea el marcador de 1×1 px, la web muestra las iniciales del cliente.
+Al subir el logo real con el mismo nombre de archivo, aparece solo (no hay que tocar el código).
+
+## 🎨 Sistema de diseño (v3)
+
+Los colores están como variables en el `:root` de cada página.
+
+| Rol | Color | Uso |
+|---|---|---|
+| Violeta eléctrico | `#4B02F3` | Botones, enlaces, íconos y foco |
+| Violeta profundo | `#490FCD` | Hover de botones y enlaces |
+| Verde lima | `#C1FF72` | Solo en el logo y el indicador "Disponible ahora" |
+| Tinta | `#181336` | Titulares, secciones oscuras y footer |
+| Papel / tinte | `#F7F6FB` / `#F2EEFF` | Secciones alternas y chips de íconos |
+
+Tipografías: Cormorant Garamond (titulares) y Plus Jakarta Sans (texto). Íconos: Lucide (licencia ISC).
 
 ## 🚀 Deploy en GitHub Pages
 
@@ -46,25 +69,18 @@ https://kondorflow.com/pago-exitoso.html
 | Número de WhatsApp | Buscar `51943489132` |
 | Email principal | Buscar `info@kondorflow.com` |
 | Google Analytics | Buscar `G-J55EJNXZVR` |
-| URLs redes sociales | Footer → botones `.soc` con `href="#"` |
+| Redes sociales | Footer → comentario "Redes sociales" (añadir solo enlaces reales) |
 | Logos de clientes | Reemplazar archivos `.webp` |
+| Preguntas frecuentes | Cambiar la pregunta visible **y** la misma pregunta en el schema `FAQPage` |
 
-## ✅ Checklist antes de publicar
+## ✅ Checklist
 
-- [ ] Subir todos los archivos al repo
-- [ ] Activar GitHub Pages (Settings → Pages)
-- [ ] Configurar DNS del dominio kondorflow.com
 - [ ] Reemplazar logos de clientes `.webp` con logos reales
 - [ ] Añadir URLs reales de redes sociales en el footer
-- [ ] Verificar dominio en Google Search Console
-- [ ] Enviar `sitemap.xml` a Google Search Console
+- [ ] Publicar una política de privacidad (el formulario recoge datos personales)
+- [ ] Crear o completar el Perfil de Empresa de Google (Google Business Profile)
+- [ ] Enviar `sitemap.xml` en Google Search Console
 - [ ] En Mercado Pago configurar URL: `https://kondorflow.com/pago-exitoso.html`
-
-## 🗑️ Archivos del repo anterior que ya no se necesitan
-
-El repo anterior tenía solo `index.html`, `kondorlogo1.png`, `kondorlogo2.png` y `CNAME`.  
-Todos esos archivos fueron reemplazados o conservados en esta versión final.  
-**No hay archivos sobrantes que eliminar** — el repo anterior era limpio.
 
 ## 📞 Contacto
 
@@ -74,4 +90,4 @@ Todos esos archivos fueron reemplazados o conservados en esta versión final.
 - Ventas: sales@kondorflow.com
 
 ---
-*Kondorflow © 2025 — HG Next Gen Solutions*
+*Kondorflow © 2026 — HG Next Gen Solutions*
