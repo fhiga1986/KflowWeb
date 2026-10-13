@@ -1,13 +1,13 @@
 {
-  "name": "Kondorflow — Agencia de Marketing Digital en Lima",
+  "name": "Kondorflow — Agencia de Marketing Digital e IA",
   "short_name": "Kondorflow",
-  "description": "Agencia de marketing digital en Lima, Perú: landing pages con SEO, AI Agents, chatbots RAG y analítica web para empresas de LATAM.",
+  "description": "Agencia de marketing digital e IA con equipos en Perú y Uruguay para toda Latinoamérica: web y SEO, agentes de IA, software SaaS y datos.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
-  "lang": "es-PE",
+  "lang": "es-419",
   "icons": [
     { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }

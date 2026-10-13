@@ -1,8 +1,9 @@
 # Kondorflow — Sitio Web Oficial
 
-**HG Next Gen Solutions** · Lima, Perú · LATAM  
+**HG Next Gen Solutions** · Perú · Uruguay · LATAM  
 Landing page institucional en HTML/CSS/JS puro — sin frameworks externos.  
-Lema: **Scale, Automate, Flow.**
+Lema: **Scale, Automate, Flow.**  
+Posicionamiento: agencia de marketing digital e IA con equipos en Perú y Uruguay para toda Latinoamérica.
 
 ## 📁 Estructura del repositorio
 
@@ -33,6 +34,17 @@ Lema: **Scale, Automate, Flow.**
 
 Mientras un logo de cliente sea el marcador de 1×1 px, la web muestra las iniciales del cliente.
 Al subir el logo real con el mismo nombre de archivo, aparece solo (no hay que tocar el código).
+
+## 🧩 Servicios (sección por pilares)
+
+| Pilar | Servicios |
+|---|---|
+| Atrae más clientes | Sitios web y landing pages · SEO · WordPress · Contenido para redes sociales |
+| Vende y atiende 24/7 | Agentes de IA · Chatbots con IA (RAG) · WhatsApp Business con IA · Automatización de procesos |
+| Escala tu operación | Software a medida y SaaS · Analítica y BI · Ciencia de datos · Soporte y correo corporativo |
+
+Más el paquete **Solución Digital 360°**. Si cambias un servicio, cámbialo también en el schema `OfferCatalog`
+y en las opciones del formulario (`servicio`).
 
 ## 🎨 Sistema de diseño (v3)
 
@@ -66,7 +78,7 @@ https://kondorflow.com/pago-exitoso.html
 
 | Qué cambiar | Dónde buscar en index.html |
 |---|---|
-| Número de WhatsApp | Buscar `51943489132` |
+| Número de WhatsApp (todos los botones van a Uruguay) | Buscar `59892327235` |
 | Email principal | Buscar `info@kondorflow.com` |
 | Google Analytics | Buscar `G-J55EJNXZVR` |
 | Redes sociales | Footer → comentario "Redes sociales" (añadir solo enlaces reales) |
@@ -84,7 +96,8 @@ https://kondorflow.com/pago-exitoso.html
 
 ## 📞 Contacto
 
-- WhatsApp: +51 943 489 132
+- Teléfono y WhatsApp Uruguay: +598 92 327 235
+- Teléfono Perú: +51 943 489 132
 - Email: info@kondorflow.com
 - Soporte: support@kondorflow.com
 - Ventas: sales@kondorflow.com
