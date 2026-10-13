@@ -76,7 +76,7 @@
         "height": 1024
       },
       "image": "https://kondorflow.com/og-image.jpg",
-      "description": "Agencia de marketing digital e inteligencia artificial con equipos en Perú y Uruguay. Desarrollo web y SEO, WordPress, contenido para redes sociales, agentes de IA, chatbots, automatización, software SaaS a medida, analítica y ciencia de datos para empresas de toda Latinoamérica.",
+      "description": "Consultora tecnológica y agencia de marketing digital e inteligencia artificial con equipos en Perú y Uruguay. Desarrollo web y SEO, WordPress, contenido para redes sociales, agentes de IA, chatbots, automatización, software SaaS a medida, analítica y ciencia de datos para empresas de toda Latinoamérica.",
       "email": "info@kondorflow.com",
       "telephone": "+59892327235",
       "areaServed": [
@@ -227,6 +227,7 @@
         }
       ],
       "knowsAbout": [
+        "Consultoría tecnológica",
         "Marketing digital",
         "Desarrollo web",
         "Landing pages",
@@ -576,7 +577,7 @@ a{color:var(--color-primary)}
 
 /* Foco visible y selección */
 :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px}
-:is(.dark,.site-footer,.svc-360,.cta-box,.site-nav) :focus-visible{outline-color:var(--color-white)}
+:is(.dark,.site-footer,.svc-360,.cta-box,.site-nav,.faq-list) :focus-visible{outline-color:var(--color-white)}
 ::selection{background:rgba(var(--color-primary-rgb),.16);color:var(--color-ink)}
 
 /* Saltar al contenido */
@@ -648,6 +649,7 @@ a{color:var(--color-primary)}
 .hero-title .kicker{margin-bottom:22px}
 .hero-title .t{display:block}
 .hero-sub{max-width:520px;margin:24px 0 34px;font-size:1.1rem;line-height:1.7;color:var(--color-text-muted);text-wrap:pretty}
+.hero-sub strong{font-weight:600;color:var(--color-ink)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 .hero-proof{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:32px}
 .hero-proof li{display:flex;align-items:center;gap:8px;font-size:.9rem;font-weight:500;color:var(--color-text)}
@@ -674,12 +676,13 @@ a{color:var(--color-primary)}
 /* =====================================================
    FRANJA DE VALORES (estática: sin marquesina en movimiento)
 ===================================================== */
-.strip{border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);background:var(--color-white);padding:22px 24px}
-.strip-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px 40px;flex-wrap:wrap}
-.strip-slogan{font-family:var(--display);font-style:italic;font-weight:600;font-size:1.4rem;line-height:1.2;color:var(--color-ink)}
+.strip{position:relative;overflow:hidden;background:var(--color-ink);padding:26px 24px}
+.strip::before{content:"";position:absolute;right:-6%;top:-220%;width:44%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,rgba(var(--color-primary-rgb),.42) 0%,transparent 66%);pointer-events:none}
+.strip-inner{position:relative;max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px 40px;flex-wrap:wrap}
+.strip-slogan{font-family:var(--display);font-style:italic;font-weight:600;font-size:1.4rem;line-height:1.2;color:var(--on-dark)}
 .strip-list{display:flex;flex-wrap:wrap;gap:12px 32px}
-.strip-list li{display:flex;align-items:center;gap:9px;font-size:.88rem;font-weight:500;color:var(--color-text)}
-.strip-list .ico{width:18px;height:18px;color:var(--color-primary)}
+.strip-list li{display:flex;align-items:center;gap:9px;font-size:.88rem;font-weight:500;color:rgba(var(--color-white-rgb),.88)}
+.strip-list .ico{width:18px;height:18px;color:var(--color-lavender)}
 
 /* =====================================================
    SERVICIOS
@@ -764,18 +767,19 @@ a{color:var(--color-primary)}
 .faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
 .faq-intro{position:sticky;top:110px}
 .faq-intro .lead a{font-weight:600;text-underline-offset:3px}
-.faq-list{display:grid;gap:12px}
-.faq-item{background:var(--color-white);border:1px solid var(--color-border);border-radius:16px;transition:border-color var(--tr),box-shadow var(--tr)}
-.faq-item.open{border-color:rgba(var(--color-primary-rgb),.3);box-shadow:var(--shadow-sm)}
+.faq-list{position:relative;overflow:hidden;display:grid;padding:8px 26px;border-radius:var(--rl);background:var(--color-ink);box-shadow:0 22px 44px -30px rgba(var(--color-ink-rgb),.55)}
+.faq-list::before{content:"";position:absolute;right:-30%;top:-12%;width:80%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,rgba(var(--color-primary-rgb),.34) 0%,transparent 66%);pointer-events:none}
+.faq-item{position:relative;border-bottom:1px solid rgba(var(--color-white-rgb),.1)}
+.faq-item:last-child{border-bottom:0}
 .faq-h{font-size:inherit;font-weight:inherit;line-height:inherit}
-.faq-btn{width:100%;min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;background:none;border:0;border-radius:16px;text-align:left;font-size:1rem;font-weight:600;line-height:1.45;color:var(--color-ink);cursor:pointer;transition:color .2s}
-.faq-btn:hover{color:var(--color-primary)}
+.faq-btn{width:100%;min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 2px;background:none;border:0;border-radius:16px;text-align:left;font-size:1rem;font-weight:600;line-height:1.45;color:var(--on-dark);cursor:pointer;transition:color .2s}
+.faq-btn:hover{color:var(--color-lavender)}
 .faq-btn:focus-visible{outline-offset:-2px}
-.faq-chev{width:20px;height:20px;color:var(--color-primary);transition:transform .25s}
+.faq-chev{width:20px;height:20px;color:var(--color-lavender);transition:transform .25s}
 .faq-item.open .faq-chev{transform:rotate(180deg)}
-.faq-ans{display:none;padding:0 22px 20px}
+.faq-ans{display:none;padding:0 2px 20px}
 .faq-item.open .faq-ans{display:block}
-.faq-ans p{font-size:.95rem;line-height:1.72;color:var(--color-text-muted)}
+.faq-ans p{font-size:.95rem;line-height:1.72;color:var(--on-dark-muted)}
 
 /* =====================================================
    LLAMADO FINAL
@@ -804,7 +808,10 @@ a{color:var(--color-primary)}
 .c-item a{font-size:.97rem;font-weight:500;text-decoration:none;word-break:break-word}
 .c-item a:hover{color:var(--color-secondary);text-decoration:underline;text-underline-offset:3px}
 .c-item p:not(.c-label){font-size:.95rem;color:var(--color-text)}
-.c-sep{margin:0 2px;color:var(--color-text-muted)}
+.c-links{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px}
+.c-item a.c-wa{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--color-primary);color:var(--color-accent);transition:background-color .2s,transform .2s}
+.c-item a.c-wa:hover{background:var(--color-secondary);text-decoration:none;transform:translateY(-1px)}
+.c-wa .ico{width:17px;height:17px}
 .form-card{padding:38px 34px;border-radius:var(--rl);background:var(--color-paper);border:1px solid var(--color-border)}
 .form-title{font-family:var(--display);font-size:1.6rem;font-weight:600;line-height:1.2;color:var(--color-ink)}
 .form-note{margin:6px 0 24px;font-size:.84rem;color:var(--color-text-muted)}
@@ -1063,7 +1070,7 @@ a{color:var(--color-primary)}
         <span class="t rise r1">Más clientes,<br> más ventas,<br> <em>más rentabilidad.</em></span>
       </h1>
       <p class="hero-sub rise r2">
-        Marketing digital, inteligencia artificial y software a medida para atraer clientes, automatizar tus ventas y escalar tu negocio. Equipos en Perú y Uruguay para empresas de toda Latinoamérica.
+        <strong>Consultora tecnológica para empresas:</strong> marketing digital, inteligencia artificial y software a medida para atraer clientes, automatizar tus ventas y escalar tu negocio. Equipos en Perú y Uruguay para toda Latinoamérica.
       </p>
       <div class="hero-actions rise r3">
         <a href="https://wa.me/59892327235?text=Hola%20Kondorflow%2C%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios"
@@ -1079,7 +1086,6 @@ a{color:var(--color-primary)}
       <ul class="hero-proof rise r4">
         <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Reunión inicial gratuita</li>
         <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Pagas al aprobar el entregable</li>
-        <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Respuesta en menos de 24 h hábiles</li>
       </ul>
     </div>
     <div class="hero-visual" aria-hidden="true">
@@ -1373,11 +1379,11 @@ a{color:var(--color-primary)}
     <div>
       <p class="kicker reveal">Contacto</p>
       <h2 class="h2 reveal d1">Hablemos de<br> <em>tu proyecto</em></h2>
-      <p class="lead reveal d2">Cuéntanos tu desafío. Te respondemos en menos de 24 horas hábiles.</p>
+      <p class="lead reveal d2">Cuéntanos tu desafío y te respondemos a&nbsp;la&nbsp;brevedad.</p>
       <ul class="c-list">
         <li class="c-item reveal">
           <span class="c-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg></span>
-          <div><p class="c-label">Teléfono Uruguay</p><p class="c-links"><a href="tel:+59892327235" onclick="gtag('event','phone_click',{event_category:'contact',event_label:'detail'})">+598 92 327 235</a><span class="c-sep" aria-hidden="true"> · </span><a href="https://wa.me/59892327235?text=Hola%20Kondorflow%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'detail'})">WhatsApp</a></p></div>
+          <div><p class="c-label">Teléfono Uruguay</p><p class="c-links"><a href="tel:+59892327235" onclick="gtag('event','phone_click',{event_category:'contact',event_label:'detail'})">+598 92 327 235</a><a class="c-wa" href="https://wa.me/59892327235?text=Hola%20Kondorflow%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" aria-label="Escribir por WhatsApp al +598 92 327 235" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'detail'})"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg></a></p></div>
         </li>
         <li class="c-item reveal">
           <span class="c-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg></span>
