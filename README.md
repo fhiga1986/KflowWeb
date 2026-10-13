@@ -58,7 +58,7 @@ Los colores están como variables en el `:root` de cada página.
 | Tinta | `#181336` | Titulares, secciones oscuras y footer |
 | Papel / tinte | `#F7F6FB` / `#F2EEFF` | Secciones alternas y chips de íconos |
 
-Tipografías: Cormorant Garamond (titulares) y Plus Jakarta Sans (texto). Íconos: Lucide (licencia ISC).
+Tipografías: Plus Jakarta Sans (titulares, botones, etiquetas y logotipo), Inter (texto e interfaz) y Playfair Display en cursiva (palabra destacada de los titulares). Íconos: Lucide (licencia ISC).
 
 ## 🚀 Deploy en GitHub Pages
 
