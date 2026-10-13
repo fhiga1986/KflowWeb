@@ -1021,8 +1021,8 @@ a{color:var(--color-primary)}
     <li><a href="#contacto"   onclick="closeMob()">Contacto</a></li>
   </ul>
   <div class="mob-actions">
-    <a href="https://wa.me/59892327235" class="btn btn-primary"
-       onclick="gtag('event','whatsapp_click',{event_category:'CTA',event_label:'mob_menu'})">
+    <a href="https://wa.me/59892327235?text=Hola%20Kondorflow%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" class="btn btn-primary"
+       onclick="gtag('event','whatsapp_click',{event_category:'CTA',event_label:'mob_menu'});closeMob()">
       <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Escribir por WhatsApp
     </a>
     <a href="#contacto" class="btn btn-ghost" onclick="closeMob()">Enviar un mensaje</a>
@@ -1354,7 +1354,7 @@ a{color:var(--color-primary)}
       <ul class="c-list">
         <li class="c-item reveal">
           <span class="c-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg></span>
-          <div><p class="c-label">Teléfono Uruguay</p><p class="c-links"><a href="tel:+59892327235" onclick="gtag('event','phone_click',{event_category:'contact',event_label:'detail'})">+598 92 327 235</a><span class="c-sep" aria-hidden="true"> · </span><a href="https://wa.me/59892327235" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'detail'})">WhatsApp</a></p></div>
+          <div><p class="c-label">Teléfono Uruguay</p><p class="c-links"><a href="tel:+59892327235" onclick="gtag('event','phone_click',{event_category:'contact',event_label:'detail'})">+598 92 327 235</a><span class="c-sep" aria-hidden="true"> · </span><a href="https://wa.me/59892327235?text=Hola%20Kondorflow%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'detail'})">WhatsApp</a></p></div>
         </li>
         <li class="c-item reveal">
           <span class="c-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg></span>
@@ -1478,7 +1478,7 @@ a{color:var(--color-primary)}
       <div class="fc">
         <p class="fc-h">Contacto</p>
         <ul>
-          <li><a href="https://wa.me/59892327235" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'footer'})">WhatsApp</a></li>
+          <li><a href="https://wa.me/59892327235?text=Hola%20Kondorflow%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" onclick="gtag('event','whatsapp_click',{event_category:'contact',event_label:'footer'})">WhatsApp</a></li>
           <li><a href="tel:+59892327235" onclick="gtag('event','phone_click',{event_category:'contact',event_label:'footer'})">Tel. Uruguay</a></li>
           <li><a href="tel:+51943489132" onclick="gtag('event','phone_click',{event_category:'contact',event_label:'footer_pe'})">Tel. Perú</a></li>
           <li><a href="mailto:info@kondorflow.com" onclick="gtag('event','email_click',{event_category:'contact',event_label:'footer_info'})">info@kondorflow.com</a></li>
@@ -1502,6 +1502,15 @@ a{color:var(--color-primary)}
 
 
 <script>
+// WhatsApp: en computadoras (mouse o trackpad) se abre en otra pestaña, así el visitante no pierde la web.
+// En celulares y tablets no cambia nada: el enlace abre la app de WhatsApp como siempre.
+if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (a) {
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+}
+
 // Barra de navegación: fondo al hacer scroll
 const nav = document.getElementById('nav');
 const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);

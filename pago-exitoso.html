@@ -174,11 +174,21 @@ img,svg{display:block;max-width:100%}
   <p>
   Kondorflow · HG Next Gen Solutions · Perú · Uruguay<br>
   <a href="mailto:info@kondorflow.com">info@kondorflow.com</a> &nbsp;·&nbsp;
-  <a href="https://wa.me/59892327235">+598 92 327 235</a>
+  <a href="https://wa.me/59892327235?text=Hola%20Kondorflow%2C%20tengo%20una%20consulta%20sobre%20mi%20pago"
+     onclick="gtag('event','whatsapp_click',{event_category:'post_payment',event_label:'footer_pago'})">+598 92 327 235</a>
   </p>
 </footer>
 
 <script>
+// WhatsApp: en computadoras (mouse o trackpad) se abre en otra pestaña, así el visitante no pierde la web.
+// En celulares y tablets no cambia nada: el enlace abre la app de WhatsApp como siempre.
+if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (a) {
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+}
+
 // Confeti breve con la paleta de marca (se omite si el usuario prefiere menos movimiento)
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
