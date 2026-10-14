@@ -12,6 +12,11 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Kondorflow — HG Next Gen Solutions">
 <link rel="canonical" href="https://kondorflow.com/">
+<!-- Versiones en otros idiomas (hreflang): las tres páginas se enlazan entre sí; x-default = español -->
+<link rel="alternate" hreflang="es" href="https://kondorflow.com/">
+<link rel="alternate" hreflang="en" href="https://kondorflow.com/en/">
+<link rel="alternate" hreflang="pt" href="https://kondorflow.com/pt/">
+<link rel="alternate" hreflang="x-default" href="https://kondorflow.com/">
 <meta name="theme-color" content="#4B02F3">
 <meta name="color-scheme" content="light only">
 <meta name="format-detection" content="telephone=no">
@@ -26,6 +31,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Kondorflow, agencia de marketing digital e IA en Perú, Uruguay y Latinoamérica">
 <meta property="og:locale" content="es_LA">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
 <meta property="og:site_name" content="Kondorflow">
 
 <!-- Twitter Card -->
@@ -54,7 +61,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-J55EJNXZVR');
+  gtag('config', 'G-J55EJNXZVR', {content_group: 'es'});
 </script>
 
 <!-- Datos estructurados: organización, sitio, página y preguntas frecuentes (deben coincidir con el contenido visible) -->
@@ -139,7 +146,9 @@
             "BO"
           ],
           "availableLanguage": [
-            "es"
+            "es",
+            "en",
+            "pt"
           ]
         },
         {
@@ -148,7 +157,9 @@
           "telephone": "+51943489132",
           "areaServed": "PE",
           "availableLanguage": [
-            "es"
+            "es",
+            "en",
+            "pt"
           ]
         },
         {
@@ -156,7 +167,9 @@
           "contactType": "technical support",
           "email": "support@kondorflow.com",
           "availableLanguage": [
-            "es"
+            "es",
+            "en",
+            "pt"
           ]
         }
       ],
@@ -385,7 +398,11 @@
       "@id": "https://kondorflow.com/#website",
       "url": "https://kondorflow.com/",
       "name": "Kondorflow",
-      "inLanguage": "es-419",
+      "inLanguage": [
+        "es-419",
+        "en",
+        "pt-BR"
+      ],
       "publisher": {
         "@id": "https://kondorflow.com/#organization"
       }
@@ -491,13 +508,13 @@
 <style>
 /* =====================================================
    SISTEMA DE DISEÑO v3 — sutil y profesional
-   Violeta = acción · Tinta = profundidad · Verde lima = solo logo
+   Violeta = acción · Tinta = profundidad · Verde lima = logo y acentos sobre púrpura
 ===================================================== */
 :root {
   /* ── Marca (mismos hex del logo) ── */
   --color-primary:   #4B02F3;  /* Violeta eléctrico: botones, enlaces, íconos y foco */
   --color-secondary: #490FCD;  /* Violeta profundo: hover y estados activos */
-  --color-accent:    #C1FF72;  /* Verde lima: logo, "Disponible" y acentos sobre púrpura (v4.3, en prueba) */
+  --color-accent:    #C1FF72;  /* Verde lima: logo, "Disponible", acentos sobre púrpura y WhatsApp flotante (v4.7) */
   --color-accent-hover: #B5F462;  /* Lima del hover de los botones lima (púrpura encima: 6,18:1) */
   --color-white:     #FFFFFF;
 
@@ -523,10 +540,6 @@
   --on-dark:       var(--color-white);
   --on-dark-muted: rgba(var(--color-white-rgb), .74);
 
-  /* Terceros: WhatsApp conserva su color para que se reconozca */
-  --color-whatsapp:      #25D366;
-  --color-whatsapp-dark: #128C7E;
-  --color-whatsapp-rgb:  37, 211, 102;
 
   /* Tipografía v4.5: Plus Jakarta Sans en titulares, botones, etiquetas y logotipo; Inter en texto e
      interfaz; Playfair Display en cursiva para la palabra destacada de los titulares */
@@ -617,9 +630,9 @@ a{color:var(--color-primary)}
 .site-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:var(--color-primary);border-bottom:1px solid transparent;transition:padding .3s,box-shadow .3s}
 .site-nav.scrolled{padding:10px 0;box-shadow:0 10px 26px -14px rgba(var(--color-ink-rgb),.55)}
 .nav-inner{max-width:1208px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
-.nav-logo img{width:40px;height:40px;border-radius:22%}
-.site-nav .nav-logo img{box-shadow:0 0 0 1.5px rgba(var(--color-white-rgb),.3)}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
+/* v4.7: logo de la cabecera en círculo con aro lima; el aro violeta interior lo separa del dibujo */
+.nav-logo img{width:40px;height:40px;border-radius:50%;box-shadow:0 0 0 2px var(--color-primary),0 0 0 4px var(--color-accent)}
 .site-nav .wordmark{color:var(--color-white)}
 .wordmark{font-family:var(--display);font-size:1.375rem;font-weight:800;letter-spacing:-.03em;color:var(--color-ink)}
 .nav-links{display:flex;gap:28px}
@@ -628,11 +641,22 @@ a{color:var(--color-primary)}
 .nav-cta{display:flex;align-items:center;gap:10px}
 .nav-cta .btn{background:var(--color-accent);color:var(--color-primary);border-color:transparent;box-shadow:none}
 .nav-cta .btn:hover{background:var(--color-accent-hover);color:var(--color-primary);border-color:transparent;transform:translateY(-1px)}
+.nav-cta .btn-ghost{background:var(--color-white);color:var(--color-primary)}
+.nav-cta .btn-ghost:hover{background:var(--color-tint);color:var(--color-primary)}
 .hamburger,.mob-close{display:none;width:44px;height:44px;align-items:center;justify-content:center;background:var(--color-white);border:1.5px solid rgba(var(--color-ink-rgb),.14);border-radius:12px;color:var(--color-ink);cursor:pointer;flex-shrink:0;transition:border-color .2s,color .2s}
 .hamburger:hover,.mob-close:hover{border-color:var(--color-primary);color:var(--color-primary)}
 .hamburger .ico,.mob-close .ico{width:22px;height:22px}
 .site-nav .hamburger{background:rgba(var(--color-white-rgb),.08);border-color:rgba(var(--color-white-rgb),.4);color:var(--color-white)}
 .site-nav .hamburger:hover{border-color:var(--color-accent);color:var(--color-accent)}
+/* Grupo derecho de la barra: idioma, botones y menú, siempre juntos */
+.nav-end{display:flex;align-items:center;gap:12px}
+
+/* Selector de idioma (v4.6): las otras dos versiones del sitio, visibles en todos los dispositivos */
+.lang{display:flex;align-items:center;flex-shrink:0}
+.lang>.ico{width:18px;height:18px;margin-right:2px;color:rgba(var(--color-white-rgb),.8)}
+.lang a{position:relative;display:inline-grid;place-items:center;min-width:40px;min-height:44px;padding:0 8px;border-radius:10px;font-family:var(--display);font-size:.875rem;font-weight:700;letter-spacing:.04em;line-height:1;color:var(--color-white);text-decoration:none;transition:color .2s,background-color .2s}
+.lang a:hover{color:var(--color-accent);background:rgba(var(--color-white-rgb),.1)}
+.lang a+a::before{content:"";position:absolute;left:0;top:15px;bottom:15px;width:1px;background:rgba(var(--color-white-rgb),.35)}
 
 /* Menú móvil: por encima de la barra para que el botón de cerrar sea clicable */
 .mob-menu{position:fixed;inset:0;z-index:1001;display:none;flex-direction:column;background:var(--color-white);padding:16px 24px 32px;overflow-y:auto}
@@ -642,6 +666,10 @@ a{color:var(--color-primary)}
 .mob-links a{display:block;padding:14px 2px;border-bottom:1px solid var(--color-border);font-family:var(--display);font-size:1.25rem;font-weight:600;letter-spacing:-.01em;color:var(--color-ink);text-decoration:none}
 .mob-links a:hover{color:var(--color-primary)}
 .mob-actions{display:grid;gap:12px;margin-top:28px}
+.mob-lang{display:flex;align-items:center;flex-wrap:wrap;gap:0 4px;margin-top:20px;padding-top:12px;border-top:1px solid var(--color-border);color:var(--color-text-muted)}
+.mob-lang .ico{width:18px;height:18px;margin-right:4px;color:var(--color-primary)}
+.mob-lang a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;font-weight:600;color:var(--color-primary);text-decoration:none}
+.mob-lang a:hover{color:var(--color-secondary);text-decoration:underline;text-underline-offset:3px}
 
 /* =====================================================
    HERO — claro, con lavado violeta sutil
@@ -668,12 +696,13 @@ a{color:var(--color-primary)}
 /* Composición visual: placa del logo + tarjetas de servicio */
 .hero-visual{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;margin-left:auto;display:grid;place-items:center}
 .hv-orb{position:absolute;inset:7%;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(var(--color-lavender-rgb),.38) 0%,rgba(var(--color-lavender-rgb),.1) 55%,transparent 72%)}
-.hv-ring{position:absolute;inset:2%;border-radius:50%;border:1px dashed rgba(var(--color-primary-rgb),.24)}
+.hv-ring{position:absolute;inset:2%;border-radius:50%;border:3px dashed var(--color-ink)}
 .hv-logo{position:relative;width:62%;border-radius:22%;box-shadow:0 34px 60px -26px rgba(var(--color-primary-rgb),.6),0 14px 28px -14px rgba(var(--color-ink-rgb),.35)}
-.hv-chip{position:absolute;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;background:var(--color-white);border:1px solid var(--color-border);border-radius:16px;box-shadow:var(--shadow-md);font-size:.84rem;line-height:1.3;color:var(--color-ink)}
+/* v4.7: tarjetas en tinta con el resplandor violeta de la franja; texto blanco e íconos lavanda */
+.hv-chip{position:absolute;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;background:radial-gradient(130% 190% at 100% 0%,rgba(var(--color-primary-rgb),.5) 0%,transparent 64%),var(--color-ink);border:1px solid rgba(var(--color-white-rgb),.12);border-radius:16px;box-shadow:0 18px 36px -16px rgba(var(--color-ink-rgb),.6);font-size:.84rem;line-height:1.3;color:var(--on-dark)}
 .hv-chip strong{display:block;font-weight:600}
-.hv-chip small{display:block;font-size:.76rem;color:var(--color-text-muted)}
-.hv-ico{width:36px;height:36px;flex-shrink:0;display:grid;place-items:center;border-radius:11px;background:var(--color-tint);color:var(--color-primary)}
+.hv-chip small{display:block;font-size:.76rem;color:var(--on-dark-muted)}
+.hv-ico{width:36px;height:36px;flex-shrink:0;display:grid;place-items:center;border-radius:11px;background:rgba(var(--color-lavender-rgb),.14);color:var(--color-lavender)}
 .hv-chip-a{top:15%;left:-4%}
 .hv-chip-b{bottom:11%;right:-3%}
 .hv-chip-c{top:1%;right:2%}
@@ -856,9 +885,11 @@ a{color:var(--color-primary)}
    WHATSAPP FLOTANTE
 ===================================================== */
 .wa{position:fixed;right:22px;bottom:22px;z-index:900;border-radius:50%;text-decoration:none}
-.wa-btn{width:56px;height:56px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--color-whatsapp),var(--color-whatsapp-dark));color:var(--color-white);box-shadow:0 12px 26px -10px rgba(var(--color-whatsapp-rgb),.7),0 2px 6px rgba(var(--color-ink-rgb),.18);transition:transform var(--tr),box-shadow var(--tr)}
+.wa-btn{width:56px;height:56px;display:grid;place-items:center;border-radius:50%;background:var(--color-accent);color:var(--color-primary);box-shadow:0 12px 26px -10px rgba(var(--color-primary-rgb),.55),0 2px 6px rgba(var(--color-ink-rgb),.18);transition:transform var(--tr),box-shadow var(--tr),background-color var(--tr)}
 .wa-btn .ico{width:27px;height:27px}
-.wa:hover .wa-btn{transform:translateY(-2px) scale(1.04)}
+.wa:hover .wa-btn{transform:translateY(-2px) scale(1.04);background:var(--color-accent-hover)}
+/* Foco visible sobre cualquier sección (el botón flota sobre fondos claros y oscuros): aro blanco + aro tinta */
+.wa:focus-visible{outline:2px solid var(--color-ink);outline-offset:2px;box-shadow:0 0 0 2px var(--color-white)}
 
 /* =====================================================
    RESPONSIVE
@@ -867,9 +898,14 @@ a{color:var(--color-primary)}
   .strip-inner{justify-content:center;text-align:center}
   .strip-list{justify-content:center}
 }
-@media (max-width:1080px){
+/* v4.6: con el selector de idioma, los enlaces de la barra entran completos desde 1180 px (en los 3 idiomas) */
+@media (max-width:1179px){
   .nav-links{display:none}
   .hamburger{display:flex}
+}
+/* Tableta angosta: el botón "Contactar" cede su lugar al idioma (el WhatsApp de la barra se mantiene) */
+@media (min-width:601px) and (max-width:699px){
+  .nav-cta .btn-ghost{display:none}
 }
 @media (max-width:1100px){
   .pillars{grid-template-columns:1fr}
@@ -969,9 +1005,14 @@ a{color:var(--color-primary)}
 }
 @media (max-width:359px){
   .hero-title .kicker .ico{display:none}
+  .nav-inner{gap:14px}
+  .nav-end{gap:6px}
+  .lang>.ico{display:none}
+  .lang a{min-width:34px;padding:0 4px;font-size:.8125rem}
 }
 @media (max-width:380px){
   .nav-inner{padding:0 16px}
+  .nav-logo{gap:10px}
   .strip-list{grid-template-columns:1fr}
   .cli-grid{grid-template-columns:1fr}
   .fact{gap:12px;padding:14px}
@@ -1002,6 +1043,7 @@ a{color:var(--color-primary)}
   <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/> <path d="M2 12h20"/></symbol>
   <symbol id="i-growth" viewBox="0 0 24 24"><path d="M13 17V9"/> <path d="M18 17V5"/> <path d="M3 3v16a2 2 0 0 0 2 2h16"/> <path d="M8 17v-3"/></symbol>
   <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/> <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/> <path d="m21 3 1 11h-2"/> <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/> <path d="M3 4h8"/></symbol>
+  <symbol id="i-lang" viewBox="0 0 24 24"><path d="m5 8 6 6"/> <path d="m4 14 6-6 2-3"/> <path d="M2 5h12"/> <path d="M7 2h1"/> <path d="m22 22-5-10-5 10"/> <path d="M14 18h6"/></symbol>
   <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/> <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/> <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
   <symbol id="i-lifebuoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/> <path d="m4.93 4.93 4.24 4.24"/> <path d="m14.83 9.17 4.24-4.24"/> <path d="m14.83 14.83 4.24 4.24"/> <path d="m9.17 14.83-4.24 4.24"/> <circle cx="12" cy="12" r="4"/></symbol>
   <symbol id="i-magnet" viewBox="0 0 24 24"><path d="m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15"/> <path d="m5 8 4 4"/> <path d="m12 15 4 4"/></symbol>
@@ -1041,17 +1083,24 @@ a{color:var(--color-primary)}
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
-      <div class="nav-cta">
-        <a href="#contacto" class="btn btn-ghost btn-sm">Contactar</a>
-        <a href="https://wa.me/59892327235?text=Hola%20Kondorflow%2C%20quiero%20agendar%20una%20reuni%C3%B3n"
-           class="btn btn-primary btn-sm"
-           onclick="gtag('event','whatsapp_click',{event_category:'CTA',event_label:'nav'})">
-          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>WhatsApp
-        </a>
+      <div class="nav-end">
+        <div class="lang" role="group" aria-label="Idioma">
+          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lang"/></svg>
+          <a href="/en/" hreflang="en" lang="en" onclick="gtag('event','language_switch',{event_category:'language',event_label:'es_en_nav'})">EN<span class="sr-only"> (English)</span></a>
+          <a href="/pt/" hreflang="pt-BR" lang="pt-BR" onclick="gtag('event','language_switch',{event_category:'language',event_label:'es_pt_nav'})">PT<span class="sr-only"> (Português)</span></a>
+        </div>
+        <div class="nav-cta">
+          <a href="#contacto" class="btn btn-ghost btn-sm">Contactar</a>
+          <a href="https://wa.me/59892327235?text=Hola%20Kondorflow%2C%20quiero%20agendar%20una%20reuni%C3%B3n"
+             class="btn btn-primary btn-sm"
+             onclick="gtag('event','whatsapp_click',{event_category:'CTA',event_label:'nav'})">
+            <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>WhatsApp
+          </a>
+        </div>
+        <button class="hamburger" id="hambBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobMenu">
+          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+        </button>
       </div>
-      <button class="hamburger" id="hambBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobMenu">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
-      </button>
     </div>
   </nav>
 </header>
@@ -1081,6 +1130,12 @@ a{color:var(--color-primary)}
       <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Escribir por WhatsApp
     </a>
     <a href="#contacto" class="btn btn-ghost" onclick="closeMob()">Enviar un mensaje</a>
+  </div>
+  <div class="mob-lang" role="group" aria-label="Idioma">
+    <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lang"/></svg>
+    <a href="/en/" hreflang="en" lang="en" onclick="gtag('event','language_switch',{event_category:'language',event_label:'es_en_menu'})">English</a>
+    <span aria-hidden="true">·</span>
+    <a href="/pt/" hreflang="pt-BR" lang="pt-BR" onclick="gtag('event','language_switch',{event_category:'language',event_label:'es_pt_menu'})">Português</a>
   </div>
 </div>
 
@@ -1599,7 +1654,7 @@ document.addEventListener('keydown', e => {
   if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
   else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 });
-const desktopMq = window.matchMedia('(min-width: 1081px)');
+const desktopMq = window.matchMedia('(min-width: 1180px)');
 const onDesktop = e => { if (e.matches) closeMob(false); };
 if (desktopMq.addEventListener) desktopMq.addEventListener('change', onDesktop); else desktopMq.addListener(onDesktop);
 

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obrigado pelo contato! — Kondorflow</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light only">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J55EJNXZVR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J55EJNXZVR', {content_group: 'pt'});
+  gtag('event', 'form_thank_you', { event_category: 'contact', event_label: 'thank_you_page' });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&amp;family=Playfair+Display:ital,wght@1,500&amp;family=Plus+Jakarta+Sans:wght@600..800&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<style>
+/* ── Sistema de diseño v3 (mismo que index.html) ── */
+:root {
+  --color-primary:   #4B02F3;  /* Violeta eléctrico: botones, enlaces e íconos */
+  --color-secondary: #490FCD;  /* Violeta profundo: hover */
+  --color-accent:    #C1FF72;  /* Verde lima: solo logo y detalles mínimos */
+  --color-white:     #FFFFFF;
+
+  --color-primary-rgb:  75, 2, 243;
+  --color-ink-rgb:      24, 19, 54;
+  --color-white-rgb:    255, 255, 255;
+  --color-lavender-rgb: 185, 168, 255;
+  --color-accent-rgb:   193, 255, 114;
+
+  --color-ink:        #181336;  /* titulares */
+  --color-text:       #3E3A57;  /* texto de lectura */
+  --color-text-muted: #625E7C;  /* texto secundario */
+  --color-paper:      #F7F6FB;  /* fondo de la página */
+  --color-tint:       #F2EEFF;  /* chips de íconos */
+  --color-border:     #E7E5F0;
+  --color-lavender:   #B9A8FF;
+
+  --display: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --body:    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --accent:  'Playfair Display', Georgia, 'Times New Roman', serif;
+  --tr: .25s cubic-bezier(.4, 0, .2, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:40px 20px;font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--color-text);background:radial-gradient(60% 45% at 50% 0%,rgba(var(--color-primary-rgb),.08) 0%,transparent 70%),radial-gradient(45% 45% at 100% 100%,rgba(var(--color-lavender-rgb),.2) 0%,transparent 70%),var(--color-paper);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+.ico{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+
+.card{position:relative;z-index:1;width:100%;max-width:560px;padding:44px 44px 36px;text-align:center;background:var(--color-white);border:1px solid var(--color-border);border-radius:24px;box-shadow:0 2px 6px rgba(var(--color-ink-rgb),.04),0 28px 60px -30px rgba(var(--color-ink-rgb),.3);animation:card-in .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes card-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:30px;text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:22%}
+.wordmark{font-family:var(--display);font-size:1.25rem;font-weight:800;letter-spacing:-.03em;color:var(--color-ink)}
+.status{width:76px;height:76px;margin:0 auto 22px;display:grid;place-items:center;border-radius:50%;background:var(--color-tint);color:var(--color-primary);box-shadow:0 0 0 8px rgba(var(--color-primary-rgb),.05)}
+.status .ico{width:34px;height:34px;stroke-width:2}
+.kicker{width:fit-content;max-width:100%;margin:0 auto 14px;padding:6px 14px;border-radius:16px;background:rgba(var(--color-primary-rgb),.07);border:1px solid rgba(var(--color-primary-rgb),.12);font-family:var(--display);font-size:.75rem;font-weight:600;letter-spacing:.05em;line-height:1.4;text-transform:uppercase;color:var(--color-primary)}
+.title{margin-bottom:12px;font-family:var(--display);font-size:clamp(1.75rem,5.5vw,2.25rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;color:var(--color-ink);text-wrap:balance}
+.title em{font-family:var(--accent);font-style:italic;font-weight:500;font-size:1.04em;letter-spacing:0;color:var(--color-primary)}
+.subtitle{max-width:440px;margin:0 auto 28px;font-size:1rem;line-height:1.7;color:var(--color-text-muted);text-wrap:pretty}
+.subtitle strong{font-weight:600;color:var(--color-ink)}
+.steps{display:grid;gap:10px;margin-bottom:28px;text-align:left;list-style:none}
+.step{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--color-paper);border:1px solid var(--color-border)}
+.step-ico{width:38px;height:38px;flex-shrink:0;display:grid;place-items:center;border-radius:11px;background:var(--color-white);border:1px solid var(--color-border);color:var(--color-primary)}
+.step h2{margin-bottom:2px;font-family:var(--display);font-size:.95rem;font-weight:600;line-height:1.4;color:var(--color-ink)}
+.step p{font-size:.87rem;line-height:1.55;color:var(--color-text-muted)}
+.divider{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.dline{flex:1;height:1px;background:var(--color-border)}
+.dtxt{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;color:var(--color-text-muted)}
+.btn-group{display:grid;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 24px;border-radius:999px;border:1.5px solid transparent;font-family:var(--display);font-size:.9375rem;font-weight:600;letter-spacing:.01em;line-height:1.2;text-decoration:none;cursor:pointer;transition:background-color var(--tr),border-color var(--tr),color var(--tr),box-shadow var(--tr),transform var(--tr)}
+.btn .ico{width:18px;height:18px}
+.btn-primary{background:var(--color-primary);color:var(--color-white);box-shadow:0 1px 2px rgba(var(--color-primary-rgb),.18),0 10px 22px -10px rgba(var(--color-primary-rgb),.6)}
+.btn-primary:hover{background:var(--color-secondary);transform:translateY(-1px)}
+.btn-ghost{background:var(--color-white);color:var(--color-ink);border-color:rgba(var(--color-ink-rgb),.16)}
+.btn-ghost:hover{color:var(--color-primary);border-color:var(--color-primary)}
+.btn-text{min-height:44px;background:none;font-family:var(--body);color:var(--color-text-muted);font-weight:500}
+.btn-text:hover{color:var(--color-primary)}
+.footer-note{position:relative;z-index:1;font-size:.82rem;line-height:1.6;text-align:center;color:var(--color-text-muted)}
+.footer-note a{color:var(--color-primary);text-decoration:none}
+.footer-note a:hover{color:var(--color-primary);text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px}
+::selection{background:rgba(var(--color-primary-rgb),.16);color:var(--color-ink)}
+@media (max-width:560px){
+  body{padding:28px 16px}
+  .card{padding:34px 22px 28px;border-radius:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+/* ── Cuenta regresiva ── */
+.countdown{margin-top:14px;font-size:.84rem;color:var(--color-text-muted)}
+.countdown strong{font-weight:600;color:var(--color-primary)}
+.countdown button{margin-left:6px;padding:4px 6px;background:none;border:0;border-radius:6px;font:inherit;font-weight:600;color:var(--color-primary);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<!-- Íconos: Lucide v0.460.0 (licencia ISC, https://lucide.dev) + glifo de WhatsApp -->
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/> <path d="M19 12H5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/> <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+  <symbol id="i-mailcheck" viewBox="0 0 24 24"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"/> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/> <path d="m16 19 2 2 4-4"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/> <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/> <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+</svg>
+
+<main class="card">
+  <a href="https://kondorflow.com/pt/" class="brand" aria-label="Kondorflow, voltar ao início">
+    <img src="/kondorlogo1.webp" width="36" height="36" alt="">
+    <span class="wordmark">Kondorflow</span>
+  </a>
+
+  <div class="status" aria-hidden="true"><svg class="ico" focusable="false"><use href="#i-mailcheck"/></svg></div>
+  <p class="kicker">Mensagem recebida</p>
+  <h1 class="title">Obrigado pelo <em>contato</em>!</h1>
+  <p class="subtitle">Sua mensagem foi enviada com sucesso. Responderemos <strong>o&nbsp;quanto&nbsp;antes</strong>.</p>
+
+  <ul class="steps">
+    <li class="step">
+      <span class="step-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-inbox"/></svg></span>
+      <div><h2>Analisamos sua mensagem</h2><p>Nossa equipe vai ler sua mensagem e preparar a melhor proposta para você.</p></div>
+    </li>
+    <li class="step">
+      <span class="step-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></span>
+      <div><h2>Entraremos em contato em breve</h2><p>Vamos escrever para você pelo WhatsApp ou por e-mail para combinar uma reunião.</p></div>
+    </li>
+    <li class="step">
+      <span class="step-ico"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+      <div><h2>Começamos a trabalhar juntos!</h2><p>Lembre-se: você só paga quando aprova e recebe o seu produto final.</p></div>
+    </li>
+  </ul>
+
+  <div class="divider"><div class="dline"></div><span class="dtxt">Precisa de uma resposta urgente?</span><div class="dline"></div></div>
+
+  <div class="btn-group">
+    <a href="https://wa.me/59892327235?text=Ol%C3%A1%2C%20Kondorflow%21%20Acabei%20de%20enviar%20um%20formul%C3%A1rio%20e%20preciso%20de%20uma%20resposta%20r%C3%A1pida"
+       class="btn btn-primary"
+       onclick="gtag('event','whatsapp_click',{event_category:'thank_you',event_label:'urgent_wa'})">
+      <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Falar agora pelo WhatsApp
+    </a>
+    <a href="https://kondorflow.com/pt/#servicios"
+       class="btn btn-ghost"
+       onclick="gtag('event','back_services',{event_category:'thank_you',event_label:'explore_services'})">
+      Conhecer nossos serviços<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+    </a>
+    <a href="https://kondorflow.com/pt/"
+       class="btn btn-text"
+       onclick="gtag('event','back_home',{event_category:'thank_you',event_label:'home'})">
+      <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow-left"/></svg>Voltar ao início
+    </a>
+  </div>
+
+  <p class="countdown" id="countdownWrap">
+    Voltando ao início em <strong><span id="countdown">10</span>&nbsp;s</strong>
+    <button type="button" id="stayBtn">Ficar aqui</button>
+  </p>
+</main>
+
+<footer class="footer-note">
+  <p>
+  Kondorflow · HG Next Gen Solutions · Peru · Uruguai<br>
+  <a href="mailto:info@kondorflow.com">info@kondorflow.com</a>
+  &nbsp;·&nbsp;
+  <a href="https://wa.me/59892327235?text=Ol%C3%A1%2C%20Kondorflow%21%20Acabei%20de%20enviar%20o%20formul%C3%A1rio%20de%20contato"
+     onclick="gtag('event','whatsapp_click',{event_category:'thank_you',event_label:'footer_ty'})">+598 92 327 235</a>
+  </p>
+</footer>
+
+<script>
+// WhatsApp: en computadoras (mouse o trackpad) se abre en otra pestaña, así el visitante no pierde la web.
+// En celulares y tablets no cambia nada: el enlace abre la app de WhatsApp como siempre.
+if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (a) {
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+}
+
+// Redirección automática al inicio en 10 s (se cancela al interactuar con la tarjeta)
+let secs = 10;
+const cd = document.getElementById('countdown');
+const wrap = document.getElementById('countdownWrap');
+const timer = setInterval(() => {
+  secs--;
+  if (cd) cd.textContent = secs;
+  if (secs <= 0) {
+    clearInterval(timer);
+    window.location.href = 'https://kondorflow.com/pt/';
+  }
+}, 1000);
+function stayHere() {
+  clearInterval(timer);
+  if (wrap) wrap.style.display = 'none';
+}
+document.getElementById('stayBtn').addEventListener('click', stayHere);
+document.querySelector('.card').addEventListener('click', stayHere, { once: true });
+</script>
+</body>
+</html>
