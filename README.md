@@ -23,13 +23,14 @@ Idiomas: español (`/`), inglés (`/en/`) y portugués de Brasil (`/pt/`).
 ├── robots.txt                  ← Permisos para buscadores
 ├── site.webmanifest            ← Config PWA (íconos icon-192 / icon-512)
 │
-├── og-image.jpg                ← Imagen al compartir en redes y WhatsApp (1200×630), español
+├── og-image-v2.jpg             ← Imagen al compartir en redes y WhatsApp (1200×630), español (v4.8: logo en círculo)
 ├── og-image-en.jpg / og-image-pt.jpg ← La misma imagen en inglés y en portugués
-├── kondorlogo1.png             ← Logo cóndor 1024 px (datos estructurados)
-├── kondorlogo1.webp            ← Logo cóndor 640 px (nav, hero, footer)
-├── favicon.ico / favicon-16x16.png / favicon-32x32.png / apple-touch-icon.png
-├── icon-192.png / icon-512.png ← Íconos de la app web (manifest)
-├── kondorlogo2.png             ← Logo horizontal (sin uso actualmente)
+├── kondorlogo-circular.png     ← Logo en círculo con aro lima, 1024 px (datos estructurados: lo que Google asocia a la marca)
+├── kondorlogo1.webp            ← Logo cóndor 640 px (barra, hero, menú y pie; el CSS lo recorta en círculo en barra y pie)
+├── favicon.ico (16/32/48) / favicon-16x16.png / favicon-32x32.png / favicon-96x96.png ← Logo en círculo con aro lima
+├── apple-touch-icon.png        ← 180 px, fondo violeta sin transparencia (iOS pone negro en lo transparente)
+├── icon-192.png / icon-512.png ← Íconos de la app web (manifest), en círculo
+├── og-image.jpg / kondorlogo1.png / kondorlogo2.png ← Versiones anteriores, ya sin uso en las páginas
 │
 └── logos de clientes (reemplazar con logos reales):
     ├── logo-save.webp              260×120px, fondo transparente
@@ -77,6 +78,14 @@ y en las opciones del formulario (`servicio`).
 - GA4: el selector dispara el evento `language_switch` con `event_label` = `origen_destino_lugar`
   (por ejemplo `es_en_nav`, `es_pt_menu`). Los demás eventos usan las mismas etiquetas en los tres idiomas.
 - Search Console: en *Rendimiento*, filtrar por página que contiene `/en/` o `/pt/`.
+
+## 🔖 Íconos y logo (v4.8)
+
+- Los íconos del navegador y de Google se piden con `?v=2` (`favicon.ico?v=2`, etc.), para que tomen la versión nueva.
+  **Si se cambian otra vez, subir a `?v=3` en las 8 páginas**: Google pide que la dirección del favicon no cambie seguido.
+- Google toma el favicon de la página de inicio. Tarda de días a semanas en actualizarlo; se acelera pidiendo la
+  indexación de `https://kondorflow.com/` en Search Console (Inspección de URL).
+- La imagen social lleva versión en el nombre cuando cambia (`og-image-v2.jpg`): WhatsApp y Facebook la guardan por dirección.
 
 ## 🎨 Sistema de diseño (v3)
 
